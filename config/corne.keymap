@@ -17,7 +17,7 @@
             #binding-cells = <2>;
             tapping_term_ms = <175>;
             flavor = "balanced";
-            bindings = <&mo>, <&kp>;
+            bindings = <&kp>, <&cp>;
         };
     };
         keymap {

@@ -29,7 +29,7 @@
         bindings = <
 
 &trans    &kp Q      &kp W      &kp E      &kp R      &kp T        &kp Y    &kp U  &kp I     &kp O    &kp P     &kp BKSP
-&kp LCTL  &lt NAV A  &lt NUM S  &lt WRP D  &lt TAB F  &kp G        &kp H    &kp J  &kp K     &kp L    &kp SCLN  &kp QUOT
+&kp LCTL  &lt NAV A  &kp S      &kp D      &lt F      &kp G        &kp H    &kp J  &kp K     &kp L    &kp SCLN  &kp QUOT
 &trans    &kp Z      &kp X      &kp C      &kp V      &kp B        &kp N    &kp M  &kp CMMA  &kp DOT  &kp FSLH  &kp RSFT
                                 &trans     &kp LGUI   &kp SPC      &kp SPC  &mo 1  &kp RET
 

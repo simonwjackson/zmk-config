@@ -40,10 +40,11 @@
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
                         
-&kp trans  &kp trans  &kp trans  &kp trans  &kp trans  &kp trans        &kp trans  &kp trans  &kp trans  &kp trans  &kp trans  &kp trans
-&kp trans  &kp trans  &kp trans  &kp trans  &kp trans  &kp trans        &kp LARW  &kp DARW  &kp UARW  &kp RARW  &kp trans  &kp trans
-&kp trans  &kp trans  &kp trans  &kp trans  &kp trans  &kp trans        &kp trans  &kp trans  &kp trans  &kp trans  &kp trans  &kp trans
-                                 &kp trans  &kp trans  &kp trans        &kp trans  &kp trans  &kp trans
+&kp trans    &kp NUM_1    &kp NUM_2    &kp NUM_3    &kp NUM_4    &kp NUM_5         &kp NUM_6 &kp NUM_7 &kp NUM_8 &kp NUM_9 &kp NUM_0 &kp BKSP
+&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &kp LARW  &kp DARW  &kp UARW  &kp RARW  &trans    &trans
+&kp LSFT   &trans       &trans       &trans       &trans       &trans            &trans    &trans    &trans    &trans    &trans    &trans
+                                        &kp LGUI     &trans       &kp SPC           &kp RET &trans &kp RALT        
+
                         >;
                 };
   };

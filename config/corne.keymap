@@ -13,7 +13,7 @@
 #define NUM 2
 #define PAG 3
 //#define WRP 4
-#define TAB 4
+#define T_D 4
 
 / {
     keymap {

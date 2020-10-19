@@ -10,6 +10,7 @@
 
 #define DEF 0
 #define NAV 1
+#define NUM 2
 
 / {
     keymap {
@@ -25,29 +26,47 @@
         bindings = <
 
 &kp TAB   &kp Q      &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I     &kp O    &kp P     &kp BKSP
-&kp LCTL  &lt 1 A    &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K     &kp L    &kp SCLN  &kp QUOT
+&kp LCTL  &lt NAV A  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K     &kp L    &kp SCLN  &kp QUOT
 &kp LSFT  &kp Z      &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp CMMA  &kp DOT  &kp FSLH  &kp RSFT
                             &kp LGUI  &mo 1  &kp SPC      &kp SPC  &mo 1  &kp RET
 
         >;
-    };
+      };
     
       direction_layer {
 //    --------------------------------------     ---------------------------------------
 //    |      |     |     |     |     |     |     |     |      |     |     |     |      |
-//    |      |     |     |     |     |     |     | LFT |  UP  | DWN | RHT |     |      |
+//    |      |     | NUM |     |     |     |     | LFT |  UP  | DWN | RHT |     |      |
 //    |      |     |     |     |     |     |     |     |      |     |     |     |      |
 //    -------------------|     |     |     |     |     |      |     |-------------------
 //                       -------------------     --------------------
 
         bindings = < 
 
-&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &kp LARW  &kp DARW  &kp UARW  &kp RARW  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans    &trans  &trans
+&trans  &trans  &trans   &trans  &trans  &trans        &trans    &trans    &trans    &trans    &trans  &trans
+&trans  &trans  &mo NUM  &trans  &trans  &trans        &kp LARW  &kp DARW  &kp UARW  &kp RARW  &trans  &trans
+&trans  &trans  &trans   &trans  &trans  &trans        &trans    &trans    &trans    &trans    &trans  &trans
+                         &trans  &trans  &trans        &trans    &trans    &trans 
+
+        >;
+      };
+      
+      number_layer {
+//    --------------------------------------     ---------------------------------------
+//    |      |     |     |     |     |     |     |     |      |     |     |     |      |
+//    |      |     |     |     |     |     |     |     |      |     |     |     |      |
+//    |      |     |     |     |     |     |     |     |      |     |     |     |      |
+//    -------------------|     |     |     |     |     |      |     |-------------------
+//                       -------------------     --------------------
+
+        bindings = < 
+
+&trans  &trans  &trans  &trans  &trans  &trans        &trans    &kp NUM_7  &kp NUM_8  &kp NUM_9  &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &kp PLUS  &kp NUM_4  &kp NUM_5  &kp NUM_6  &kp MINUS  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans    &kp NUM_1  &kp NUM_2  &kp NUM_3  &trans     &trans
                         &trans  &trans  &trans        &trans    &trans    &trans 
 
-          >;
+        >;
       };
   };
 };

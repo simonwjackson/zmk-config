@@ -91,7 +91,7 @@
         >;
       };
       
-//    wrapping_layer {
+    wrapping_layer {
 //    --------------------------------------     ---------------------------------------
 //    |      |     |     |     |     |     |     |      |     |     |     |     |      |
 //    |      |     |     |     |     |     |     |      |     |     |     |     |      |
@@ -99,17 +99,17 @@
 //    -------------------|     |     |     |     |      |     |     |-------------------
 //                       -------------------     --------------------
 
-//        bindings = < 
-//
-//&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
-//&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
-//&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
-//                        &trans  &trans  &trans        &trans    &trans    &trans 
-//
-//        >;
-//      };
+        bindings = < 
 
-//      tab_layer {
+&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
+                        &trans  &trans  &trans        &trans    &trans    &trans 
+
+        >;
+      };
+
+      tab_layer {
 //    --------------------------------------     ---------------------------------------
 //    |      |     |     |     |     |     |     |      |     |     |     |     |      |
 //    |      |     |     |     |     |     |     | BKSP | TAB | TAB | DEL |     |      |
@@ -117,14 +117,14 @@
 //    -------------------|     |     |     |     |      |     |     |-------------------
 //                       -------------------     --------------------
 
-//        bindings = < 
+        bindings = < 
 
-//&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
-//&trans  &trans  &trans  &trans  &trans  &trans        &kp BKSP  &kp TAB   &kp TAB   &kp DEL  &trans  &trans
-//&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
-//                        &trans  &trans  &trans        &trans    &trans    &trans 
+&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &kp BKSP  &kp TAB   &kp TAB   &kp DEL  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
+                        &trans  &trans  &trans        &trans    &trans    &trans 
 
-//        >;
-//      };
-        };
+        >;
+      };
+  };
 };

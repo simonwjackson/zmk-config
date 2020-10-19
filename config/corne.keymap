@@ -30,25 +30,7 @@
                             &kp LGUI  &mo 1  &kp SPC      &kp SPC  &mo 1  &kp RET
 
         >;
-      };
-   
-      direction_layer {
-//    --------------------------------------     ---------------------------------------
-//    |      |     |     |     |     |     |     |     |      |     |     |     |      |
-//    |      |     |     |     |     |     |     | LFT |  UP  | DWN | RHT |     |      |
-//    |      |     |     |     |     |     |     |     |      |     |     |     |      |
-//    -------------------|     |     |     |     |     |      |     |-------------------
-//                       -------------------     --------------------
-
-        bindings = < 
-
-&kp trans  &kp trans  &kp trans  &kp trans  &kp trans  &kp trans        &kp trans  &kp trans  &kp trans  &kp trans  &kp trans  &kp trans
-&kp trans  &kp trans  &kp trans  &kp trans  &kp trans  &kp trans        &kp LARW   &kp DARW   &kp UARW   &kp RARW   &kp trans  &kp trans
-&kp trans  &kp trans  &kp trans  &kp trans  &kp trans  &kp trans        &kp trans  &kp trans  &kp trans  &kp trans  &kp trans  &kp trans
-                                 &kp trans  &kp trans  &kp trans        &kp trans  &kp trans  &kp trans 
-
-          >;
-      };
+    };
   };
 };
 

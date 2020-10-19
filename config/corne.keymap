@@ -12,8 +12,8 @@
 #define NAV 1
 #define NUM 2
 #define PAG 3
-#define WRP 4
-#define TAB 5
+//#define WRP 4
+#define TAB 4
 
 / {
     keymap {
@@ -90,7 +90,7 @@
         >;
       };
       
-      wrapping_layer {
+//    wrapping_layer {
 //    --------------------------------------     ---------------------------------------
 //    |      |     |     |     |     |     |     |      |     |     |     |     |      |
 //    |      |     |     |     |     |     |     |      |     |     |     |     |      |
@@ -98,17 +98,17 @@
 //    -------------------|     |     |     |     |      |     |     |-------------------
 //                       -------------------     --------------------
 
-        bindings = < 
+//        bindings = < 
+//
+//&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
+//&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
+//&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
+//                        &trans  &trans  &trans        &trans    &trans    &trans 
+//
+//        >;
+//      };
 
-&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
-                        &trans  &trans  &trans        &trans    &trans    &trans 
-
-        >;
-      };
-
-      tab_layer {
+//      tab_layer {
 //    --------------------------------------     ---------------------------------------
 //    |      |     |     |     |     |     |     |      |     |     |     |     |      |
 //    |      |     |     |     |     |     |     | BKSP | TAB | TAB | DEL |     |      |
@@ -116,15 +116,15 @@
 //    -------------------|     |     |     |     |      |     |     |-------------------
 //                       -------------------     --------------------
 
-        bindings = < 
+//        bindings = < 
 
-&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &kp BKSP  &kp TAB   &kp TAB   &kp DEL  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
-                        &trans  &trans  &trans        &trans    &trans    &trans 
+//&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
+//&trans  &trans  &trans  &trans  &trans  &trans        &kp BKSP  &kp TAB   &kp TAB   &kp DEL  &trans  &trans
+//&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
+//                        &trans  &trans  &trans        &trans    &trans    &trans 
 
-        >;
-      };
+//        >;
+//      };
 
   };
 };

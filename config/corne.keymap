@@ -11,6 +11,7 @@
 #define DEF 0
 #define NAV 1
 #define NUM 2
+#define PAG 3
 
 / {
     keymap {
@@ -25,10 +26,10 @@
 //                       -------------------     --------------------
         bindings = <
 
-&kp TAB   &kp Q      &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I     &kp O    &kp P     &kp BKSP
-&kp LCTL  &lt NAV A  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K     &kp L    &kp SCLN  &kp QUOT
-&kp LSFT  &kp Z      &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp CMMA  &kp DOT  &kp FSLH  &kp RSFT
-                            &kp LGUI  &mo 1  &kp SPC      &kp SPC  &mo 1  &kp RET
+&kp TAB   &kp Q      &kp W      &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I     &kp O    &kp P     &kp BKSP
+&kp LCTL  &lt NAV A  &lt NUM S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K     &kp L    &kp SCLN  &kp QUOT
+&kp LSFT  &kp Z      &kp X      &kp C     &kp V  &kp B        &kp N    &kp M  &kp CMMA  &kp DOT  &kp FSLH  &kp RSFT
+                                &kp LGUI  &mo 1  &kp SPC      &kp SPC  &mo 1  &kp RET
 
         >;
       };
@@ -36,7 +37,7 @@
       direction_layer {
 //    --------------------------------------     ---------------------------------------
 //    |      |     |     |     |     |     |     |     |      |     |     |     |      |
-//    |      |     | NUM |     |     |     |     | LFT |  UP  | DWN | RHT |     |      |
+//    |      |     | PAG |     |     |     |     | LFT |  UP  | DWN | RHT |     |      |
 //    |      |     |     |     |     |     |     |     |      |     |     |     |      |
 //    -------------------|     |     |     |     |     |      |     |-------------------
 //                       -------------------     --------------------
@@ -44,7 +45,7 @@
         bindings = < 
 
 &trans  &trans  &trans   &trans  &trans  &trans        &trans    &trans    &trans    &trans    &trans  &trans
-&trans  &trans  &mo NUM  &trans  &trans  &trans        &kp LARW  &kp DARW  &kp UARW  &kp RARW  &trans  &trans
+&trans  &trans  &mo PAG  &trans  &trans  &trans        &kp LARW  &kp DARW  &kp UARW  &kp RARW  &trans  &trans
 &trans  &trans  &trans   &trans  &trans  &trans        &trans    &trans    &trans    &trans    &trans  &trans
                          &trans  &trans  &trans        &trans    &trans    &trans 
 
@@ -61,10 +62,28 @@
 
         bindings = < 
 
-&trans  &trans  &trans  &trans  &trans  &trans        &kp NUM_3  &kp NUM_7  &kp NUM_8  &kp NUM_9  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &MINUS     &kp NUM_4  &kp NUM_5  &kp NUM_6  &MINUS  &EQL
-&trans  &trans  &trans  &trans  &trans  &trans        &kp NUM_8  &kp NUM_1  &kp NUM_2  &kp NUM_3  &FSLH   &trans
-                        &trans  &trans  &trans        &kp NUM_0  &kp DOT    &kp CMMA 
+&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &kp HOME  &kp PGDN  &kp PGUP  &kp END  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
+                        &trans  &trans  &trans        &trans    &trans    &trans 
+
+        >;
+      };
+      
+      tab_layer {
+//    --------------------------------------     ---------------------------------------
+//    |      |     |     |     |     |     |     |     |      |     |     |     |      |
+//    |      |     |     |     |     |     |     |     |      |     |     |     |      |
+//    |      |     |     |     |     |     |     |     |      |     |     |     |      |
+//    -------------------|     |     |     |     |     |      |     |-------------------
+//                       -------------------     --------------------
+
+        bindings = < 
+
+&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &kp BKSP  &kp TAB   &kp TAB   &kp DEL  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
+                        &trans  &trans  &trans        &trans    &trans    &trans 
 
         >;
       };

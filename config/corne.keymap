@@ -73,7 +73,7 @@
         >;
       };
 
-//      paging_layer {
+      paging_layer {
 //    --------------------------------------     ---------------------------------------
 //    |      |     |     |     |     |     |     |     |      |     |     |     |      |
 //    |      |     |     |     |     |     |     |     |      |     |     |     |      |
@@ -81,15 +81,15 @@
 //    -------------------|     |     |     |     |     |      |     |-------------------
 //                       -------------------     --------------------
 
-//        bindings = < 
+        bindings = < 
 
-//&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
-//&trans  &trans  &trans  &trans  &trans  &trans        &kp HOME  &kp PGDN  &kp PGUP  &kp END  &trans  &trans
-//&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
-//                        &trans  &trans  &trans        &trans    &trans    &trans 
+&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &kp HOME  &kp PGDN  &kp PGUP  &kp END  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
+                        &trans  &trans  &trans        &trans    &trans    &trans 
 
-//        >;
-//      };
+        >;
+      };
       
 //    wrapping_layer {
 //    --------------------------------------     ---------------------------------------

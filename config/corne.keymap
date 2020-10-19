@@ -47,7 +47,7 @@
         bindings = < 
 
 &trans  &trans  &trans   &trans  &trans  &trans        &trans    &trans    &trans    &trans    &trans  &trans
-&trans  &trans  &mo PAG  &trans  &trans  &trans        &kp LARW  &kp DARW  &kp UARW  &kp RARW  &trans  &trans
+&trans  &trans  &trans   &trans  &trans  &trans        &kp LARW  &kp DARW  &kp UARW  &kp RARW  &trans  &trans
 &trans  &trans  &trans   &trans  &trans  &trans        &trans    &trans    &trans    &trans    &trans  &trans
                          &trans  &trans  &trans        &trans    &trans    &trans 
 

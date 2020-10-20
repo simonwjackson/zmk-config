@@ -165,6 +165,24 @@
                         &trans  &trans  &trans        &trans  &trans   &trans 
 
         >;
+      };      
+            
+      media_layer {
+//    --------------------------------------     -------------------------------------------
+//    |      |     |     |     |     |     |     |      |       |       |      |      |    |
+//    |      |     |     |     |     |     |     |      |       |       |      |      |    |
+//    |      |     |     |     |     |     |     |      |       |       |      |      |    |
+//    -------------------|     |     |     |     |      |       |       |-------------------
+//                       -------------------     ------------------------
+
+        bindings = < 
+
+&trans  &trans  &trans  &trans  &trans  &trans        &cp M_PREV  &cp M_VOLD  &cp M_VOLU  &cp M_NEXT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &cp M_PREV  &cp M_PLAY  &cp M_MUTE  &cp M_NEXT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans      &trans      &trans      &trans      &trans  &trans
+                        &trans  &trans  &trans        &trans      &trans      &trans 
+
+        >;
       };
   };
 };

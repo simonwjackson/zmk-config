@@ -15,61 +15,62 @@
 #define WRP 4
 #define CHK 5
 #define SYM 6
+#define FUN 7
 
 
 / {
-        keymap {
-                compatible = "zmk,keymap";
-      default_layer {
-//    --------------------------------------                 ------------------------------------
-//    |      |  Q  |  W  |  E  |  R  |  T  |                 |  Y  |  U  |  I  |  O  |  P  |    |
-//    | CTRL |  A  |  S  |  D  |  F  |  G  |                 |  H  |  J  |  K  |  L  |  ;  |    |
-//    |      |  Z  |  X  |  C  |  V  |  B  |------     ------|  N  |  M  |     |  =  |  '  |    |
-//    -------------------------|     | GUI | ALT |     | SFT | RET |     |-----------------------
-//                             -------------------     --------------------
-        bindings = <
+     keymap {
+       compatible = "zmk,keymap";
+       default_layer {
+//     --------------------------------------                 ------------------------------------
+//     |      |  Q  |  W  |  E  |  R  |  T  |                 |  Y  |  U  |  I  |  O  |  P  |    |
+//     | CTRL |  A  |  S  |  D  |  F  |  G  |                 |  H  |  J  |  K  |  L  |  ;  |    |
+//     |      |  Z  |  X  |  C  |  V  |  B  |------     ------|  N  |  M  |     |  =  |  '  |    |
+//     -------------------------|     | GUI | ALT |     | SFT | RET |     |-----------------------
+//                              -------------------     -------------------
+         bindings = <
 
 &trans        &kp Q      &kp W      &kp E      &kp R      &kp T             &kp Y         &kp U    &kp I     &kp O    &kp P     &trans
 &mt LCTL ESC  &lt DIR A  &lt NUM S  &lt WRP D  &lt CHK F  &kp G             &kp H         &kp J    &kp K     &kp L    &kp SCLN  &trans
 &trans        &kp Z      &kp X      &kp C      &kp V      &kp B             &kp N         &kp M    &trans    &kp EQL  &kp QUOT  &trans
                                     &trans     &kp LGUI   &mt LALT SPC      &mt RSFT SPC  &kp RET  &trans
 
-        >;
-      };
+         >;
+       };
 
-      dir_layer {
-//    --------------------------------------     -------------------------------------
-//    |      |     |     |     |     |     |     |     |      |     |     |     |    |
-//    |      |     | PAG |     |     |     |     | LFT |  UP  | DWN | RHT | EQL |    |
-//    |      |     |     |     |     |     |     |     |      |     |     |     |    |
-//    -------------------|     |     |     |     |     |      |     |-----------------
-//                       -------------------     --------------------
+       dir_layer {
+//     --------------------------------------                 -----------------------------------
+//     |      |     |     |     |     |     |                 |     |    |     |     |     |    |
+//     |      |     | PAG |     | FUN |     |                 | LFT | UP | DWN | RHT | EQL |    |
+//     |      |     |     |     |     |     |------     ------|     |    |     |     |     |    |
+//     -------------------------|     |     |     |     |     |     |    |-----------------------
+//                              -------------------     ------------------
 
-        bindings = < 
+         bindings = < 
 
 &trans  &trans  &trans   &trans  &trans  &trans        &trans    &trans    &trans    &trans    &trans  &trans
-&trans  &trans  &mo PAG  &trans  &trans  &trans        &kp LARW  &kp DARW  &kp UARW  &kp RARW  &kp EQL &trans
+&trans  &trans  &mo PAG  &trans  &mo FUN &trans        &kp LARW  &kp DARW  &kp UARW  &kp RARW  &kp EQL &trans
 &trans  &trans  &trans   &trans  &trans  &trans        &trans    &trans    &trans    &trans    &trans  &trans
                          &trans  &trans  &trans        &trans    &trans    &trans 
 
-        >;
-      };
+         >;
+       };
 
 
-      number_layer {
-//    --------------------------------------     ------------------------------------
-//    |      |     |     |     |     |     |     |  #  |  7  |  8  |  9  |  %  |    |
-//    |      |     |     |     |     |     |     |  +  |  4  |  5  |  6  |  -  |    |
-//    |      |     |     |     |     |     |     |  *  |  1  |  2  |  3  |  /  |    |
-//    -------------------|     |     |     |     |  0  |  .  |  ,  |-----------------
-//                       -------------------     -------------------
+       number_layer {
+//     --------------------------------------     ------------------------------------
+//     |      |     |     |     |     |     |     |  #  |  7  |  8  |  9  |  %  |    |
+//     |      |     |     | SYM |     |     |     |  +  |  4  |  5  |  6  |  -  |    |
+//     |      |     |     |     |     |     |     |  *  |  1  |  2  |  3  |  /  |    |
+//     -------------------|     |     |     |     |  0  |  .  |  ,  |-----------------
+//                        -------------------     -------------------
 
         bindings = < 
 
-&trans  &trans  &trans  &trans  &trans  &trans        &kp HASH   &kp NUM_7  &kp NUM_8  &kp NUM_9  &kp PRCT   &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &kp KPLS   &kp NUM_4  &kp NUM_5  &kp NUM_6  &kp MINUS  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &kp KMLT   &kp NUM_1  &kp NUM_2  &kp NUM_3  &kp FSLH   &trans
-                        &trans  &trans  &trans        &kp NUM_0  &kp DOT    &kp CMMA 
+&trans  &trans  &trans  &trans   &trans  &trans        &kp HASH   &kp NUM_7  &kp NUM_8  &kp NUM_9  &kp PRCT   &trans
+&trans  &trans  &trans  &mo SYM  &trans  &trans        &kp KPLS   &kp NUM_4  &kp NUM_5  &kp NUM_6  &kp MINUS  &trans
+&trans  &trans  &trans  &trans   &trans  &trans        &kp KMLT   &kp NUM_1  &kp NUM_2  &kp NUM_3  &kp FSLH   &trans
+                        &trans   &trans  &trans        &kp NUM_0  &kp DOT    &kp CMMA 
 
         >;
       };
@@ -93,19 +94,19 @@
       };
       
     wrapping_layer {
-//    --------------------------------------     ---------------------------------------
-//    |      |     |     |     |     |     |     |      |     |     |     |     |      |
-//    |      |     |     |     |     |     |     |      |     |     |     |     |      |
-//    |      |     |     |     |     |     |     |      |     |     |     |     |      |
-//    -------------------|     |     |     |     |      |     |     |-------------------
+//    --------------------------------------     --------------------------------------
+//    |      |     |     |     |     |     |     |      |  [  |  ]  |     |     |     |
+//    |      |     |     |     |     |     |     |      |  (  |  )  |     |     |     |
+//    |      |     |     |     |     |     |     |      |  {  |  }  |     |     |     |
+//    -------------------|     |     |     |     |      |  <  |  >  |------------------
 //                       -------------------     --------------------
 
         bindings = < 
 
-&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
-                        &trans  &trans  &trans        &trans    &trans    &kp END
+&trans  &trans  &trans  &trans  &trans  &trans        &trans  &kp LBKT  &kp RBKT  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans  &kp LPRN  &kp RPRN  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans  &kp LCUR  &kp RCUR  &trans  &trans  &trans
+                        &trans  &trans  &trans        &trans  &kp CMMA  &kp DOT
 
         >;
       };
@@ -131,7 +132,7 @@
       
       symbol_layer {
 //    --------------------------------------     ---------------------------------------
-//    |      |     |     |     |     |     |     |  ~  |  /  |  |  |  \  |     |      |
+//    |      |     |     |     |     |     |     |  ~  |  /  |  |  |  \  |  `  |      |
 //    |      |     |     |     |     |     |     |  ^  |  @  |  &  |  $  |     |      |
 //    |      |     |     |     |     |     |     |     |  ?  |  !  |     |     |      |
 //    -------------------|     |     |     |     |     |     |     |-------------------
@@ -139,10 +140,29 @@
 
         bindings = < 
 
-&trans  &trans  &trans  &trans  &trans  &trans        &kp TILD  &kp FSLH  &kp PIPE  &kp BSLH  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &kp TILD  &kp FSLH  &kp PIPE  &kp BSLH  &kp GRAV  &trans
 &trans  &trans  &trans  &trans  &trans  &trans        &kp CRRT  &kp ATSN  &kp AMPS  &kp CURU  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans        &trans    &kp FSLH  &kp BANG  &trans    &trans  &trans
                         &trans  &trans  &trans        &trans    &trans    &trans 
+
+        >;
+      };
+      
+            
+      function_layer {
+//    --------------------------------------     -------------------------------------------
+//    |      |     |     |     |     |     |     |  F1  |  F2   |  F3   |  F4  |  F5  |    |
+//    |      |     |     |     |     |     |     |  F6  |  F7   |  F8   |  F9  |  F10 |    |
+//    |      |     |     |     |     |     |     |      |  F11  |  F12  |      |      |    |
+//    -------------------|     |     |     |     |      |       |       |-------------------
+//                       -------------------     ------------------------
+
+        bindings = < 
+
+&trans  &trans  &trans  &trans  &trans  &trans        &kp F1  &kp F2   &kp F3   &kp F4  &kp F5   &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &kp F6  &kp F7   &kp F8   &kp F9  &kp F10  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans  &kp F11  &kp F12  &trans  &trans   &trans
+                        &trans  &trans  &trans        &trans  &trans   &trans 
 
         >;
       };

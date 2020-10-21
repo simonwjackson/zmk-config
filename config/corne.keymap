@@ -32,7 +32,7 @@
 //                              -------------------     -------------------
          bindings = <
 
-&kp WWW       &kp Q      &kp W      &lt MED E  &kp R      &kp T             &kp Y         &kp U    &kp I     &kp O    &kp P     &trans
+&cp WWW       &kp Q      &kp W      &lt MED E  &kp R      &kp T             &kp Y         &kp U    &kp I     &kp O    &kp P     &trans
 &mt LCTL ESC  &lt DIR A  &lt NUM S  &lt WRP D  &lt CHK F  &kp G             &kp H         &kp J    &kp K     &kp L    &kp SCLN  &trans
 &trans        &kp Z      &lt PAG X  &lt SYM C  &lt FUN V  &kp B             &kp N         &kp M    &trans    &kp EQL  &kp QUOT  &trans
                                     &trans     &kp LGUI   &mt LALT SPC      &mt RSFT SPC  &kp RET  &trans

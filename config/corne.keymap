@@ -141,10 +141,10 @@
 
          bindings = < 
 
-&trans  &trans  &trans  &trans  &trans  &trans        &kp TILD  &kp FSLH  &kp PIPE  &kp BSLH  &kp GRAV  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &kp CRRT  &kp ATSN  &kp AMPS  &kp CURU  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans    &kp FSLH  &kp BANG  &trans    &trans  &trans
-                        &trans  &trans  &trans        &trans    &trans    &trans 
+&trans  &trans  &trans  &trans  &trans  &trans        &kp TILD  &kp FSLH   &kp PIPE  &kp BSLH  &kp GRAV  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &kp CRRT  &kp ATSN   &kp AMPS  &kp DLLR  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans    &kp QMARK  &kp BANG  &trans    &trans  &trans
+                        &trans  &trans  &trans        &trans    &trans     &trans 
 
          >;
        };

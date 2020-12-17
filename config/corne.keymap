@@ -46,7 +46,7 @@
 
 &trans        &kp Q      &kp W      &lt MED E  &kp R      &kp T             &kp Y         &kp U    &kp I     &kp O    &kp P     &trans
 &mt LCTL ESC  &lt DIR A  &lt NUM S  &lt WRP D  &lt CHK F  &kp G             &kp H         &kp J    &kp K     &kp L    &kp SCLN  &trans
-&trans        &hm LCTRL Z      &kp X      &kp C      &lt FUN V  &kp B             &kp N         &kp M    &kp CMMA  &kp DOT  &kp QUOT  &tog GAM
+&trans        &kp Z      &kp X      &kp C      &lt FUN V  &trans             &trans        &kp M    &kp N  &kp B    &kp QUOT  &tog GAM
                                     &trans     &kp LGUI   &mt LALT SPC      &mt LSFT SPC  &kp RET  &kp EQL
 
          >;
@@ -125,17 +125,17 @@
        };
 
        tab_layer {
-//     --------------------------------------                  ---------------------------------------
-//     |      |     |     |     |     |     |                  |      |     |     |     |     |      |
-//     |      |     |     |     |     |     |                  | BKSP | TAB | TAB | DEL |     |      |
-//     |      |     |     |     |     |     |------     -------|      |     |     |     |     |      |
-//     -------------------------|     |     |     |     |      |      |     |-------------------------
+//     --------------------------------------                  -----------------------------------------
+//     |      |     |     |     |     |     |                  |      |     |       |     |     |      |
+//     |      |     |     |     |     |     |                  | BKSP | TAB | S-TAB | DEL |     |      |
+//     |      |     |     |     |     |     |------     -------|      |     |       |     |     |      |
+//     -------------------------|     |     |     |     |      |      |     |---------==----------------
 //                              -------------------     ---------------------
 
          bindings = < 
 
 &trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &kp BKSP  &kp TAB   &kp TAB   &kp DEL  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &kp BKSP  &kp TAB   &kp LS(TAB)   &kp DEL  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans    &trans   &trans  &trans
                         &trans  &trans  &trans        &trans    &trans    &trans 
 

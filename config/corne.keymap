@@ -44,10 +44,10 @@
 //                              -------------------     -------------------
          bindings = <
 
-&trans        &kp Q      &kp W      &lt MED E  &kp R      &kp T             &kp Y         &kp U    &kp I     &kp O    &kp P     &trans
-&mt LCTL ESC  &lt DIR A  &lt NUM S  &lt WRP D  &lt CHK F  &kp G             &kp H         &kp J    &kp K     &kp L    &kp SCLN  &trans
-&trans        &kp Z      &kp X      &kp C      &lt FUN V  &trans             &trans        &kp M    &kp N  &kp B    &kp QUOT  &tog GAM
-                                    &trans     &kp LGUI   &mt LALT SPC      &mt LSFT SPC  &kp RET  &kp EQL
+&trans  &kp Q      &kp W      &lt MED E  &kp R      &kp T             &kp Y         &kp U    &kp I     &kp O    &kp P     &trans
+&trans  &lt DIR A  &lt NUM S  &lt WRP D  &lt CHK F  &kp G             &kp H         &kp J    &kp K     &kp L    &kp SCLN  &trans
+&trans  &kp Z      &kp X      &kp C      &lt FUN V  &trans            &trans        &kp M    &kp N     &kp B    &kp QUOT  &tog GAM
+                              &kp LGUI   &mt LCTL   &mt LALT ESC      &mt LSFT SPC  &kp RET  &kp EQL
 
          >;
        };

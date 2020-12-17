@@ -17,10 +17,22 @@
 #define SYM 6
 #define FUN 7
 #define MED 8
+#define GAM 9
 
 #define WWW 0xf0
 
 / {
+     behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping_term_ms = <150>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+     };
+    
      keymap {
        compatible = "zmk,keymap";
        default_layer {
@@ -34,7 +46,7 @@
 
 &trans        &kp Q      &kp W      &lt MED E  &kp R      &kp T             &kp Y         &kp U    &kp I     &kp O    &kp P     &trans
 &mt LCTL ESC  &lt DIR A  &lt NUM S  &lt WRP D  &lt CHK F  &kp G             &kp H         &kp J    &kp K     &kp L    &kp SCLN  &trans
-&trans        &kp Z      &kp X      &kp C      &lt FUN V  &kp B             &kp N         &kp M    &kp CMMA  &kp DOT  &kp QUOT  &trans
+&trans        &hm LCTRL Z      &kp X      &kp C      &lt FUN V  &kp B             &kp N         &kp M    &kp CMMA  &kp DOT  &kp QUOT  &tog GAM
                                     &trans     &kp LGUI   &mt LALT SPC      &mt LSFT SPC  &kp RET  &kp EQL
 
          >;
@@ -107,7 +119,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans        &trans  &kp LBKT  &kp RBKT  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans        &trans  &kp LPRN  &kp RPRN  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans        &trans  &kp LCUR  &kp RCUR  &trans  &trans  &trans
-                        &trans  &trans  &trans        &trans  &kp CMMA  &kp DOT
+                        &trans  &trans  &trans        &trans  &kp LT    &kp GT
 
          >;
        };
@@ -182,6 +194,23 @@
 &trans  &trans  &trans  &trans  &trans  &trans        &cp M_PREV  &cp M_PLAY  &cp M_MUTE  &cp M_NEXT  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans        &trans      &trans      &trans      &trans      &trans  &trans
                         &trans  &trans  &trans        &trans      &trans      &trans 
+
+         >;
+       };
+       
+       game_layer {
+//     --------------------------------------                 ------------------------------------
+//     |      |  Q  |  W  |  E  |  R  |  T  |                 |  Y  |  U  |  I  |  O  |  P  |    |
+//     | CTRL |  A  |  S  |  D  |  F  |  G  |                 |  H  |  J  |  K  |  L  |  ;  |    |
+//     |      |  Z  |  X  |  C  |  V  |  B  |------     ------|  N  |  M  |  ,  |  .  |  '  |    |
+//     -------------------------|     | GUI | ALT |     | SFT | RET |  =  |-----------------------
+//                              -------------------     -------------------
+         bindings = <
+
+&trans  &kp Q  &kp W  &kp E     &kp R     &kp T          &kp Y     &kp U    &kp I     &kp O    &kp P     &trans
+&trans  &kp A  &kp S  &kp D     &kp F     &kp G          &kp H     &kp J    &kp K     &kp L    &kp SCLN  &trans
+&trans  &kp Z  &kp X  &kp C     &kp V     &kp B          &kp N     &kp M    &kp CMMA  &kp DOT  &kp QUOT  &tog GAM
+                      &kp LGUI  &kp LALT  &kp SPC        &kp LSFT  &kp RET  &kp EQL
 
          >;
        };

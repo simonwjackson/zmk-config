@@ -37,11 +37,11 @@
        compatible = "zmk,keymap";
        default_layer {
 //     --------------------------------------                 -------------------------------------
-//     |      |  Q  |  W  |  E  |  R  |  T  |                 |  Y  |  U  |  I  |  O  |  P  |     |
-//     |      |  A  |  S  |  D  |  F  |  G  |                 |  H  |  J  |  K  |  L  |  ;  |     |
-//     |      |  Z  |  X  |  C  |  V  |     |------     ------|     |  M  |  N  |  B  |  '  | GAM |
-//     -------------------------| GUI | CTL | ALT |     | SFT | RET |  =  |------------------------
-//                              -------------------     -------------------
+//     |     |  Q  |  W  |  E  |  R  |  T  |                 |  Y  |  U  |  I  |  O  |  P  |     |
+//     |     |  A  |  S  |  D  |  F  |  G  |                 |  H  |  J  |  K  |  L  |  ;  |     |
+//     | COL |  Z  |  X  |  C  |  V  |     |------     ------|     |  M  |  N  |  B  |  '  | GAM |
+//     ------------------------| GUI | CTL | ALT |     | SFT | RET |  =  |------------------------
+//                             -------------------     -------------------
          bindings = <
 
 &trans  &kp Q      &kp W      &lt MED E  &kp R      &kp T             &kp Y         &kp U    &kp I     &kp O    &kp P     &trans
@@ -211,6 +211,23 @@
 &trans  &kp A  &kp S  &kp D     &kp F     &kp G          &kp H     &kp J    &kp K     &kp L    &kp SCLN  &trans
 &trans  &kp Z  &kp X  &kp C     &kp V     &kp B          &kp N     &kp M    &kp CMMA  &kp DOT  &kp QUOT  &tog GAM
                       &kp LGUI  &kp LALT  &kp SPC        &kp LSFT  &kp RET  &kp EQL
+
+         >;
+       };
+       
+       colemak {
+//     --------------------------------------                 -------------------------------------
+//     |     |  Q  |  W  |  F  |  P  |  G  |                 |  J  |  L  |  U  |  Y  |     |     |
+//     |     |  A  |  R  |  S  |  T  |  D  |                 |  H  |  N  |  E  |  I  |  O  |     |
+//     | COL |  Z  |  X  |  C  |  V  |  '  |------     ------|  ;  |  M  |  N  |  K  |  B  | GAM |
+//     ------------------------| GUI | CTL | ALT |     | SFT | RET |  =  |------------------------
+//                             -------------------     -------------------
+         bindings = <
+
+&trans    &kp Q  &kp W  &kp F     &kp P     &kp G          &kp J     &kp L    &kp U    &kp Y  &trans  &trans
+&trans    &kp A  &kp R  &kp S     &kp T     &kp D          &kp H     &kp N    &kp E    &kp I  &kp O   &trans
+&tog COL  &kp Z  &kp X  &kp C     &kp V     &kp QUOT       &kp SEMI  &kp M    &kp N    &kp K  &kp B   &tog GAM
+                        &kp LGUI  &kp LALT  &kp SPC        &kp LSFT  &kp RET  &kp EQL
 
          >;
        };

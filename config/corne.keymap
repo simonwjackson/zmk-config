@@ -24,22 +24,38 @@
 
 / {
      behaviors {
-       combo_one {
+       combo_esc {
          compatible = "zmk,behavior-combo";
-	    label = "COMBO_ONE";
-         timeout-ms = <150>;
+	 label = "COMBO_ESC";
+         timeout-ms = <120>;
          key-positions = <20 21>;
+         bindings = <&kp ESC>;
+       };
+       
+       combo_ret {
+         compatible = "zmk,behavior-combo";
+	 label = "COMBO_RET";
+         timeout-ms = <120>;
+         key-positions = <19 20>;
          bindings = <&kp RET>;
        };
-          
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping_term_ms = <150>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
+       
+       combo_sav {
+         compatible = "zmk,behavior-combo";
+	 label = "COMBO_SAV";
+         timeout-ms = <120>;
+         key-positions = <18 21>;
+         bindings = <&kp LC(S)>;
+       };
+       
+       hm: homerow_mods {
+         compatible = "zmk,behavior-hold-tap";
+         label = "HOMEROW_MODS";
+         #binding-cells = <2>;
+         tapping_term_ms = <150>;
+         flavor = "tap-preferred";
+         bindings = <&kp>, <&kp>;
+       };
      };
     
      keymap {
@@ -49,14 +65,14 @@
 //     |     |  Q  |  W  |  E  |  R  |  T  |                 |  Y  |  U  |  I  |  O  |  P  |     |
 //     |     |  A  |  S  |  D  |  F  |  G  |                 |  H  |  J  |  K  |  L  |  ;  |     |
 //     | COL |  Z  |  X  |  C  |  V  |     |------     ------|     |  M  |  N  |  B  |  '  | GAM |
-//     ------------------------| GUI | CTL | ALT |     | SFT | RET |  =  |------------------------
+//     ------------------------| GUI | CTL | GUI |     | SFT | RET |  =  |------------------------
 //                             -------------------     -------------------
          bindings = <
 
-&trans        &kp Q      &kp W      &lt MED E  &kp R      &kp T             &kp Y         &kp U    &kp I     &kp O    &kp P     &trans
-&mt LCTL ESC  &lt DIR A  &lt NUM S  &lt WRP D  &lt CHK F  &kp G             &kp H         &kp J    &kp K     &kp L    &kp SCLN  &trans
-&tog COL      &kp Z      &kp X      &kp C      &lt FUN V  &trans            &trans        &kp M    &kp N     &kp B    &kp QUOT  &tog GAM
-                                    &kp LGUI   &trans     &mt LALT SPC      &mt LSFT RET  &trans   &trans
+&trans        &kp Q      &kp W      &lt MED E  &kp R      &kp T             &kp Y          &kp U     &kp I     &kp O    &kp P     &trans
+&mt LCTL ESC  &lt DIR A  &lt NUM S  &lt WRP D  &lt CHK F  &kp G             &kp H          &kp J     &kp K     &kp L    &kp SCLN  &trans
+&tog COL      &kp Z      &kp X      &kp C      &lt FUN V  &trans            &trans         &kp M     &kp N     &kp B    &kp QUOT  &tog GAM
+                                    &trans     &LALT      &mt LGUI SPC      &mt LCTRL SPC  &kp LSFT  &trans
 
          >;
        };

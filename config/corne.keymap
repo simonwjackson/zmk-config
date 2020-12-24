@@ -24,6 +24,14 @@
 
 / {
      behaviors {
+       combo_one {
+         compatible = "zmk,behavior-combo";
+	    label = "COMBO_ONE";
+         timeout-ms = <150>;
+         key-positions = <20 21>;
+         bindings = <&kp RET>;
+       };
+          
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";

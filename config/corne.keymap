@@ -65,14 +65,14 @@
 //     |     |  Q  |  W  |  E  |  R  |  T  |                 |  Y  |  U  |  I  |  O  |  P  |     |
 //     |     |  A  |  S  |  D  |  F  |  G  |                 |  H  |  J  |  K  |  L  |  ;  |     |
 //     | COL |  Z  |  X  |  C  |  V  |     |------     ------|     |  M  |  N  |  B  |  '  | GAM |
-//     ------------------------| GUI | CTL | GUI |     | SFT | RET |  =  |------------------------
+//     ------------------------|     | ALT | GUI |     | CTL | SFT |  =  |------------------------
 //                             -------------------     -------------------
          bindings = <
 
 &trans        &kp Q      &kp W      &lt MED E  &kp R      &kp T             &kp Y          &kp U     &kp I     &kp O    &kp P     &trans
 &mt LCTL ESC  &lt DIR A  &lt NUM S  &lt WRP D  &lt CHK F  &kp G             &kp H          &kp J     &kp K     &kp L    &kp SCLN  &trans
 &tog COL      &kp Z      &kp X      &kp C      &lt FUN V  &trans            &trans         &kp M     &kp N     &kp B    &kp QUOT  &tog GAM
-                                    &trans     &LALT      &mt LGUI SPC      &mt LCTRL SPC  &kp LSFT  &trans
+                                    &trans     &kp LALT   &mt LGUI SPC      &mt LCTRL SPC  &kp LSFT  &trans
 
          >;
        };

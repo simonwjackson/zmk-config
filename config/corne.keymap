@@ -48,9 +48,9 @@
          bindings = <&kp LC(S)>;
        };
        
-       hm: homerow_mods {
+       lm: letter_mods {
          compatible = "zmk,behavior-hold-tap";
-         label = "HOMEROW_MODS";
+         label = "LETTER_MODS";
          #binding-cells = <2>;
          tapping_term_ms = <150>;
          flavor = "tap-preferred";
@@ -64,15 +64,15 @@
 //     --------------------------------------                 -------------------------------------
 //     |     |  Q  |  W  |  E  |  R  |  T  |                 |  Y  |  U  |  I  |  O  |  P  |     |
 //     |     |  A  |  S  |  D  |  F  |  G  |                 |  H  |  J  |  K  |  L  |  ;  |     |
-//     | COL |  Z  |  X  |  C  |  V  |     |------     ------|     |  M  |  N  |  B  |  '  | GAM |
-//     ------------------------|     | ALT | GUI |     | CTL | SFT |  =  |------------------------
+//     |     |  Z  |  X  |  C  |  V  |     |------     ------|     |  M  |  N  |  B  |  '  | GAM |
+//     ------------------------|     |     | GUI |     | CTL |     |     |------------------------
 //                             -------------------     -------------------
          bindings = <
 
-&trans        &kp Q      &kp W      &lt MED E  &kp R      &kp T             &kp Y          &kp U     &kp I     &kp O    &kp P     &trans
-&mt LCTL ESC  &lt DIR A  &lt NUM S  &lt WRP D  &lt CHK F  &kp G             &kp H          &kp J     &kp K     &kp L    &kp SCLN  &trans
-&tog COL      &kp Z      &kp X      &kp C      &lt FUN V  &trans            &trans         &kp M     &kp N     &kp B    &kp QUOT  &tog GAM
-                                    &trans     &kp LALT   &mt LGUI SPC      &mt LCTRL SPC  &kp LSFT  &trans
+&trans   &kp Q       &kp W       &lt MED E  &kp R      &kp T             &kp Y          &kp U     &kp I     &kp O       &kp P          &trans
+&trans   &lt DIR A   &lt NUM S   &lt WRP D  &lt CHK F  &kp G             &kp H          &kp J     &kp K     &kp L       &kp SCLN       &trans
+&trans   &lm LCTL Z  &lm LSFT X  &kp C      &lt FUN V  &trans            &trans         &kp M     &kp N     &lm LSFT B  &lm LCTL QUOT  &tog GAM
+                                 &trans     &trans     &mt LGUI SPC      &mt LALT SPC   &trans    &trans
 
          >;
        };

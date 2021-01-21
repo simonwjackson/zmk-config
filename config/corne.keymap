@@ -32,10 +32,10 @@
          flavor = "tap-preferred";
          bindings = <&kp>, <&kp>;
        };
-     };
-     
-     &mt {
-       tapping_term_ms = <50>;
+       
+       &mt {
+         tapping_term_ms = <50>;
+       };
      };
      
      combos { 

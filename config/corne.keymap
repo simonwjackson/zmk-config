@@ -23,32 +23,54 @@
 #define WWW 0xf0
 
 / {
-     behaviors {
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping_term_ms = <150>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
+     behaviors {       
+       lm: letter_mods {
+         compatible = "zmk,behavior-hold-tap";
+         label = "LETTER_MODS";
+         #binding-cells = <2>;
+         tapping_term_ms = <150>;
+         flavor = "tap-preferred";
+         bindings = <&kp>, <&kp>;
+       };
      };
+     
+     combos { 
+       compatible = "zmk,combos";
+       
+       combo_esc {
+         timeout-ms = <50>;
+         key-positions = <20 21>;
+         bindings = <&kp ESC>;
+       };
+       
+       combo_ret {
+         timeout-ms = <50>;
+         key-positions = <19 20>;
+         bindings = <&kp RET>;
+       };
+       
+       combo_sav {
+         timeout-ms = <50>;
+         key-positions = <18 21>;
+         bindings = <&kp LC(S)>;
+       };
+     }
     
      keymap {
        compatible = "zmk,keymap";
        default_layer {
 //     --------------------------------------                 -------------------------------------
-//     |     |  Q  |  W  |  E  |  R  |  T  |                 |  Y  |  U  |  I  |  O  |  P  |     |
-//     |     |  A  |  S  |  D  |  F  |  G  |                 |  H  |  J  |  K  |  L  |  ;  |     |
-//     | COL |  Z  |  X  |  C  |  V  |     |------     ------|     |  M  |  N  |  B  |  '  | GAM |
-//     ------------------------| GUI | CTL | ALT |     | SFT | RET |  =  |------------------------
+//     |     |  Q  |  W  |  E  |  R  |  T   |                 |  Y  |  U  |  I  |  O  |  P  |     |
+//     |     |  A  |  S  |  D  |  F  |  G   |                 |  H  |  J  |  K  |  L  |  ;  |     |
+//     |     |  Z  |  X  |  C  |  V  |  ,   |------     ------|  .  |  M  |  N  |  B  |  '  |     |
+//     ------------------------|     | GSFT | GUI |     | ALT | SFT |     |------------------------
 //                             -------------------     -------------------
          bindings = <
 
-&trans        &kp Q      &kp W      &lt MED E  &kp R      &kp T             &kp Y         &kp U    &kp I     &kp O    &kp P     &trans
-&mt LCTL ESC  &lt DIR A  &lt NUM S  &lt WRP D  &lt CHK F  &kp G             &kp H         &kp J    &kp K     &kp L    &kp SCLN  &trans
-&tog COL      &kp Z      &kp X      &kp C      &lt FUN V  &trans            &trans        &kp M    &kp N     &kp B    &kp QUOT  &tog GAM
-                                    &kp LGUI   &trans     &mt LALT SPC      &mt LSFT RET  &trans   &trans
+&trans   &kp Q       &kp W       &lt MED E  &kp R         &kp T             &kp Y          &kp U     &kp I     &kp O   &kp P          &trans
+&kp ESC  &lt DIR A   &lt NUM S   &lt WRP D  &lt CHK F     &kp G             &kp H          &kp J     &kp K     &kp L   &kp SCLN       &kp RET
+&trans   &lm LCTL Z  &kp X       &kp C      &lt FUN V     &kp CMMA          &kp DOT        &kp M     &kp N     &kp B   &lm LCTL QUOT  &trans
+                                 &trans     &kp LS(LGUI)  &mt LGUI SPC      &mt LALT SPC   &kp LSFT  &trans
 
          >;
        };
@@ -191,9 +213,9 @@
 
          bindings = < 
 
-&trans  &trans  &trans  &trans  &trans  &trans        &cp M_PREV  &cp M_VOLD  &cp M_VOLU  &cp M_NEXT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &cp C_RW    &cp M_VOLD  &cp M_VOLU  &cp C_FF    &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans        &cp M_PREV  &cp M_PLAY  &cp M_MUTE  &cp M_NEXT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans      &trans      &trans      &trans      &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans      &cp C_BRI_DN   &cp C_BRI_UP   &trans      &trans  &trans
                         &trans  &trans  &trans        &trans      &trans      &trans 
 
          >;

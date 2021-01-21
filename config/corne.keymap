@@ -54,7 +54,7 @@
          key-positions = <18 21>;
          bindings = <&kp LC(S)>;
        };
-     }
+     };
     
      keymap {
        compatible = "zmk,keymap";

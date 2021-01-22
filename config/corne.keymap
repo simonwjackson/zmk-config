@@ -63,18 +63,18 @@
      keymap {
        compatible = "zmk,keymap";
        default_layer {
-//     --------------------------------------                 -------------------------------------
-//     |     |  Q  |  W  |  E  |  R  |  T   |                 |  Y  |  U  |  I  |  O  |  P  |     |
-//     |     |  A  |  S  |  D  |  F  |  G   |                 |  H  |  J  |  K  |  L  |  ;  |     |
-//     |     |  Z  |  X  |  C  |  V  |  ,   |------     ------|  .  |  M  |  N  |  B  |  '  |     |
-//     ------------------------|     | GSFT | GUI |     | ALT | SFT |     |------------------------
-//                             -------------------     -------------------
+//     ---------------------------------------                  ------------------------------------
+//     |    |  Q  |  W  |  E  |   R   |  T   |                  |  Y  |  U  |  I  |  O  |  P  |    |
+//     |    |  A  |  S  |  D  |   F   |  G   |                  |  H  |  J  |  K  |  L  |  ;  |    |
+//     |    |  Z  |  X  |  C  |   V   |  ,   |-------     ------|  .  |  M  |  N  |  B  |  '  |    |
+//     ------------------------| CSGUI | CGUI | GUI |     | ALT | SFT |     |-----------------------
+//                             ----------------------     -------------------
          bindings = <
 
 &trans   &kp Q       &kp W       &lt MED E  &kp R         &kp T             &kp Y          &kp U     &kp I     &kp O   &kp P          &trans
 &trans   &lt DIR A   &lt NUM S   &lt WRP D  &lt CHK F     &kp G             &kp H          &kp J     &kp K     &kp L   &kp SCLN       &trans
 &trans   &lm LCTL Z  &kp X       &kp C      &lt FUN V     &kp CMMA          &kp DOT        &kp M     &kp N     &kp B   &lm LCTL QUOT  &trans
-                          &kp RC(RS(RGUI))  &kp RC(RGUI)  &mt RGUI SPC      &mt RALT SPC   &kp RSFT  &trans
+                          &kp RC(RS(RGUI))  &kp RC(RGUI)  &kp RGUI      &mt RALT SPC   &kp RSFT  &trans
 
          >;
        };

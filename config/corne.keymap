@@ -23,7 +23,7 @@
 #define WWW 0xf0
        
 &mt {
-  tapping_term_ms = <90>;
+  tapping-term-ms = <400>;
 };
 
 / {

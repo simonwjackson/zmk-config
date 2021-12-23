@@ -74,7 +74,7 @@
 &bt BT_CLR    &kp Q       &kp W       &lt MED E  &kp R         &kp T             &kp Y          &kp U       &kp I     &kp O   &kp P          &bt BT_CLR
 &bt BT_SEL 1  &lt DIR A   &lt NUM S   &lt WRP D  &lt CHK F     &kp G             &kp H          &kp J       &kp K     &kp L   &kp SEMI       &bt BT_SEL 3
 &bt BT_SEL 2  &lm LCTRL Z &kp X       &kp C      &lm LSHFT V   &kp COMMA         &kp DOT        &lm RSHFT M &kp N     &kp B   &lm LCTRL SQT  &bt BT_SEL 4
-                          &kp RA(RGUI) &kp RALT  &kp RGUI      &kp SPACE         &kp RA(RGUI)   &trans
+                          &trand      &kp RALT  &kp RGUI      &kp SPACE         &kp RA(RGUI)   &trans
 
          >;
        };

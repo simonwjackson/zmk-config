@@ -32,7 +32,7 @@
          compatible = "zmk,behavior-hold-tap";
          label = "LETTER_MODS";
          #binding-cells = <2>;
-         tapping_term_ms = <100>;
+         tapping_term_ms = <150>;
          flavor = "tap-preferred";
          bindings = <&kp>, <&kp>;
        };

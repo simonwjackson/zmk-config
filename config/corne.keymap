@@ -32,7 +32,7 @@
          compatible = "zmk,behavior-hold-tap";
          label = "LETTER_MODS";
          #binding-cells = <2>;
-         tapping_term_ms = <200>;
+         tapping_term_ms = <100>;
          flavor = "tap-preferred";
          bindings = <&kp>, <&kp>;
        };
@@ -42,13 +42,13 @@
        compatible = "zmk,combos";
        
        combo_esc {
-         timeout-ms = <50>;
+         timeout-ms = <80>;
          key-positions = <20 21>;
          bindings = <&kp ESC>;
        };
        
        combo_ret {
-         timeout-ms = <50>;
+         timeout-ms = <80>;
          key-positions = <19 20>;
          bindings = <&kp RET>;
        };
@@ -67,14 +67,14 @@
 //     |    |  Q  |  W  |  E  |    R   |  T   |                 |  Y  |  U  |  I  |  O  |  P  |    |
 //     |    |  A  |  S  |  D  |    F   |  G   |                 |  H  |  J  |  K  |  L  |  ;  |    |
 //     |    |  Z  |  X  |  C  |    V   |  ,   |------     ------|  .  |  M  |  N  |  B  |  '  |    |
-//     ------------------------| CSGUI | CGUI | GUI |     | ALT |     |     |-----------------------
+//     ------------------------| A+GUI |  ALT | GUI |     | ALT |     |     |-----------------------
 //                             ----------------------     -------------------
          bindings = <
 
-&bt BT_CLR    &kp Q       &kp W       &lt MED E  &kp R         &kp T             &kp Y          &kp U       &kp I     &kp O   &kp P          &bt BT_SEL 3
-&bt BT_SEL 1  &lt DIR A   &lt NUM S   &lt WRP D  &lt CHK F     &kp G             &kp H          &kp J       &kp K     &kp L   &kp SEMI       &bt BT_SEL 4
-&bt BT_SEL 2  &lm LCTRL Z &kp X       &kp C      &lm LSHFT V   &kp COMMA         &kp DOT        &lm RSHFT M  &kp N    &kp B   &lm LCTRL SQT  &bt BT_SEL 5
-                          &kp RA(RGUI) &kp RALT  &kp RGUI    n  &kp SPACE         &trans         &trans
+&bt BT_CLR    &kp Q       &kp W       &lt MED E  &kp R         &kp T             &kp Y          &kp U       &kp I     &kp O   &kp P          &bt BT_CLR
+&bt BT_SEL 1  &lt DIR A   &lt NUM S   &lt WRP D  &lt CHK F     &kp G             &kp H          &kp J       &kp K     &kp L   &kp SEMI       &bt BT_SEL 3
+&bt BT_SEL 2  &lm LCTRL Z &kp X       &kp C      &lm LSHFT V   &kp COMMA         &kp DOT        &lm RSHFT M &kp N     &kp B   &lm LCTRL SQT  &bt BT_SEL 4
+                          &kp RA(RGUI) &kp RALT  &kp RGUI      &kp SPACE         &trans         &trans
 
          >;
        };
@@ -218,9 +218,9 @@
          bindings = < 
 
 &trans  &trans  &trans  &trans  &trans  &trans        &kp C_RW    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_FF    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &kp C_PREV  &kp C_PP  &kp C_MUTE  &kp C_NEXT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans      &kp C_BRI_DN   &kp C_BRI_UP   &trans      &trans  &trans
-                        &trans  &trans  &trans        &trans      &trans      &trans 
+&trans  &trans  &trans  &trans  &trans  &trans        &kp C_PREV  &kp C_PP      &kp C_MUTE    &kp C_NEXT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans      &kp C_BRI_DN  &kp C_BRI_UP  &trans      &trans  &trans
+                        &trans  &trans  &trans        &trans      &trans        &trans 
 
          >;
        };

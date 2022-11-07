@@ -1,7 +1,9 @@
 manifest:
   remotes:
     - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
+      # Mouse-keys fork (beta)
+      url-base: https://github.com/ftc/zmk
+      # url-base: https://github.com/zmkfirmware
   projects:
     - name: zmk
       remote: zmkfirmware

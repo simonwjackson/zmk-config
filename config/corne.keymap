@@ -97,9 +97,9 @@
 
          bindings = < 
 
-&trans  &trans  &trans   &trans       &trans   &trans        &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR
-&trans  &trans  &mo PAG  &trans       &mo FUN  &trans        &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &kp EQUAL &trans
-&trans  &trans  &trans   &trans       &trans   &trans        &trans        &trans        &trans        &trans        &trans  &trans
+&trans  &trans  &trans   &trans       &trans   &trans        &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR  &trans
+&trans  &trans  &mo PAG  &trans       &mo FUN  &trans        &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &kp EQUAL   &trans
+&trans  &trans  &trans   &trans       &trans   &trans        &trans        &trans        &trans        &trans        &trans      &trans
                          &bootloader  &trans   &trans        &trans        &trans        &bootloader 
 
          >;

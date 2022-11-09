@@ -97,7 +97,7 @@
 
 &trans  &kp Q       &kp W       &lt MED E  &kp R         &kp T             &kp Y          &kp U        &kp I     &kp O   &kp P          &trans
 &trans  &lt DIR A   &lt NUM S   &lt WRP D  &lt CHK F     &kp G             &kp H          &kp J        &kp K     &kp L   &semi_swap     &trans
-&trans  &lm LCTRL Z &kp X       &kp C      &td_mt_v      &kp COMMA         &kp DOT        &td_mt_v     &kp N     &kp B   &lm LCTRL SQT  &trans
+&trans  &lm LCTRL Z &kp X       &kp C      &td_mt_v      &kp COMMA         &kp DOT        &td_mt_m     &kp N     &kp B   &lm LCTRL SQT  &trans
                                 &reset     &kp RALT      &kp RGUI          &kp SPACE      &kp RA(RGUI) &reset
 
          >;

@@ -17,8 +17,6 @@
 #define SYM 6
 #define FUN 7
 #define MED 8
-#define GAM 9
-#define COL 10
 
 #define WWW 0xf0
        

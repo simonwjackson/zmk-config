@@ -281,9 +281,9 @@
 
          bindings = < 
 
-&reset       &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans   &trans   &trans  &reset
-&trans       &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans   &trans   &trans  &trans
-&bootloader  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans   &trans   &trans  &bootloader
+&trans  &reset       &trans  &trans  &trans  &trans        &trans    &trans    &trans   &trans   &reset       &trans
+&trans  &trans       &trans  &trans  &trans  &trans        &trans    &trans    &trans   &trans   &trans       &trans
+&trans  &bootloader  &trans  &trans  &trans  &trans        &trans    &trans    &trans   &trans   &bootloader  &trans
                              &trans  &trans  &trans        &trans    &trans    &trans 
 
          >;

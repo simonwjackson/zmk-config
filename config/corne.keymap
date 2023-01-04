@@ -9,7 +9,7 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define DEF 0
-#define KEY 1
+#define AND 1
 #define DIR 2
 #define NUM 3
 #define PAG 4
@@ -18,7 +18,7 @@
 #define SYM 7
 #define FUN 8
 #define MED 9
-#define AND 10
+#define KEY 10
 
 #define WWW 0xf0
        

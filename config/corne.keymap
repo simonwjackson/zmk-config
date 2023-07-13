@@ -19,130 +19,119 @@
 #define SYM 7
 #define FUN 8
 #define MED 9
-#define KEY 10
 
-#define WWW 0xf0
-       
 &mt {
   tapping-term-ms = <400>;
 };
 
 / {
-     behaviors {       
-       lm: letter_mods {
-         compatible = "zmk,behavior-hold-tap";
-         label = "LETTER_MODS";
-         #binding-cells = <2>;
-         tapping_term_ms = <200>;
-         flavor = "tap-preferred";
-         bindings = <&kp>, <&kp>;
-       };
-       
-       td_mt_v: tap_dance_mod_tap {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_MOD_TAP";
-            #binding-cells = <0>;
-            tapping-term-ms = <100>;
-            bindings = <&mt LSHIFT V>, <&caps_word>;
-       };
-        
-       td_mt_m: tap_dance_mod_tap_m {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_MOD_TAP_M";
-            #binding-cells = <0>;
-            tapping-term-ms = <100>;
-            bindings = <&mt LSHIFT M>, <&kp CAPS>;
-       };
-       
-       semi_swap: semi_swap_mod {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SEMI_SWAP";
-            #binding-cells = <0>;
-            bindings = <&kp COLON>, <&kp SEMI>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-       };
-     };
-     
-     combos { 
-       compatible = "zmk,combos";
-       
-       combo_esc {
-         timeout-ms = <80>;
-         key-positions = <20 21>;
-         bindings = <&kp ESC>;
-       };
-       
-       combo_ret {
-         timeout-ms = <80>;
-         key-positions = <19 20>;
-         bindings = <&kp RET>;
-       };
-       
-       combo_sav {
-         timeout-ms = <50>;
-         key-positions = <18 21>;
-         bindings = <&kp LC(S)>;
-       };
-     };
+    behaviors {
+      semi_swap: grave_escape {
+        compatible = "zmk,behavior-mod-morph";
+        label = "SEMI_SWAP";
+        #binding-cells = <0>;
+        bindings = <&kp COLON>, <&kp SEMI>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+      };
+
+      lm: letter_mods {
+        compatible = "zmk,behavior-hold-tap";
+        label = "LETTER_MODS";
+        #binding-cells = <2>;
+        tapping_term_ms = <200>;
+        flavor = "tap-preferred";
+        bindings = <&kp>, <&kp>;
+      };
+    };
+  //   td_mt_v: tap_dance_mod_tap {
+  //        compatible = "zmk,behavior-tap-dance";
+  //        label = "tap_dance_mod_tap";
+  //        #binding-cells = <0>;
+  //        tapping-term-ms = <100>;
+  //        bindings = <&mt lshift v>, <&caps_word>;
+  //   };
+  //    
+  //   td_mt_m: tap_dance_mod_tap_m {
+  //        compatible = "zmk,behavior-tap-dance";
+  //        label = "tap_dance_mod_tap_m";
+  //        #binding-cells = <0>;
+  //        tapping-term-ms = <100>;
+  //        bindings = <&mt lshift m>, <&kp caps>;
+  //   };
+  //   
+
+  combos { 
+    compatible = "zmk,combos";
     
-     keymap {
-       compatible = "zmk,keymap";
-       
-       default_layer {
-//     --------------------------------                  -------------------------------
-//     |  Q  |  W  |  E  |  R  |  T   |                  |  Y  |  U  |  I  |  O  |  P  |
-//     |  A  |  S  |  D  |  F  |  G   |                  |  H  |  J  |  K  |  L  |  ;  |
-//     |  Z  |  X  |  C  |  V  |  ,   |-------     ------|  .  |  M  |  N  |  B  |  '  |
-//     ------------------| AND | RALT | RGUI |     | SPC |     |     |------------------
-//                       ---------------------     -------------------
+    combo_esc {
+      timeout-ms = <80>;
+      key-positions = <20 21>;
+      bindings = <&kp ESC>;
+    };
+    
+    combo_ret {
+      timeout-ms = <80>;
+      key-positions = <19 20>;
+      bindings = <&kp RET>;
+    };
+    
+    combo_sav {
+      timeout-ms = <50>;
+      key-positions = <18 21>;
+      bindings = <&kp LC(S)>;
+    };
+  };
+
+  keymap {
+    compatible = "zmk,keymap";
+
+    default_layer {
+//    --------------------------------                  -------------------------------
+//    |  Q  |  W  |  E  |  R  |  T   |                  |  Y  |  U  |  I  |  O  |  P  |
+//    |  A  |  S  |  D  |  F  |  G   |                  |  H  |  J  |  K  |  L  |  ;  |
+//    |  Z  |  X  |  C  |  V  |  ,   |-------     ------|  .  |  M  |  N  |  B  |  '  |
+//    ------------------| AND | RALT | RGUI |     | SPC |     |     |------------------
+//                      ---------------------     -------------------
          bindings = <
-
-&trans  &kp Q        &kp W      &lt MED E  &kp R         &kp T             &kp Y        &kp U        &kp I     &kp O   &kp P          &trans
-&trans  &lt DIR A    &lt NUM S  &lt WRP D  &lt CHK F     &kp G             &kp H        &kp J        &kp K     &kp L   &semi_swap     &trans
-&trans  &lm LCTRL Z  &kp X      &kp C      &lm LSHFT V   &lt KEY COMMA     &lt KEY DOT  &lm RSHFT M  &kp N     &kp B   &lm LCTRL SQT  &trans
-                                &tog AND   &kp RALT      &kp RGUI          &kp SPC      &trans       &trans
-
-         >;
-       };
-       
-       android_compat_layer {
-              
-//     Moonlight will remap Right-Alt to Gui for better compatibility within android.
-//
-//     --------------------------------                  -------------------------------
-//     |  Q  |  W  |  E  |  R  |  T   |                  |  Y  |  U  |  I  |  O  |  P  |
-//     |  A  |  S  |  D  |  F  |  G   |                  |  H  |  J  |  K  |  L  |  ;  |
-//     |  Z  |  X  |  C  |  V  |  ,   |-------     ------|  .  |  M  |  N  |  B  |  '  |
-//     ------------------|     | LALT | RALT |     | SPC |     |     |------------------
-//                       ---------------------     -------------------
-         bindings = <
-
-&trans  &kp Q        &kp W      &lt MED E  &kp R         &kp T             &kp Y    &kp U        &kp I   &kp O   &kp P          &trans
-&trans  &lt DIR A    &lt NUM S  &lt WRP D  &lt CHK F     &kp G             &kp H    &kp J        &kp K   &kp L   &semi_swap     &trans
-&trans  &lm LCTRL Z  &kp X      &kp C      &lm LSHFT V   &kp COMMA         &kp DOT  &lm RSHFT M  &kp N   &kp B   &lm LCTRL SQT  &trans
-                                &trans     &kp LALT      &kp RALT          &kp SPC  &trans       &trans
-
+&trans  &kp Q         &kp W      &lt MED E  &kp R        &kp T         &kp Y    &kp U        &kp I   &kp O   &kp P          &trans
+&trans  &lt DIR A     &lt NUM S  &lt WRP D  &lt CHK F    &kp G         &kp H    &kp J        &kp K   &kp L   &semi_swap     &trans
+&trans  &mt LCTRL Z   &kp X      &kp C      &mt LSHFT V  &kp COMMA     &kp DOT  &mt RSHFT M  &kp N   &kp B   &mt LCTRL SQT  &trans
+                                 &tog AND   &kp RALT     &kp RGUI      &kp SPC  &trans       &trans
          >;
        };
 
-       dir_layer {
-//     -------------------------------                  ------------------------------
-//     |      |     |     |     |     |                 |     |    |     |     |     |
-//     |      | PAG |     | FUN |     |                 | LFT | UP | DWN | RHT | EQL |
-//     |      |     |     |     |     |------     ------|     |    |     |     |     |
-//     -------------------|     |     |     |     |     |     |    |------------------
-//                        -------------------     ------------------
+    android_compat_layer {
+//    Moonlight will remap Right-Alt to Gui for better compatibility within android.
+//    --------------------------------                  -------------------------------
+//    |  Q  |  W  |  E  |  R  |  T   |                  |  Y  |  U  |  I  |  O  |  P  |
+//    |  A  |  S  |  D  |  F  |  G   |                  |  H  |  J  |  K  |  L  |  ;  |
+//    |  Z  |  X  |  C  |  V  |  ,   |-------     ------|  .  |  M  |  N  |  B  |  '  |
+//    ------------------|     | LALT | RALT |     | SPC |     |     |------------------
+//                       ---------------------     -------------------
+      bindings = <
+&trans  &kp Q         &kp W      &lt MED E  &kp R        &kp T           &kp Y    &kp U        &kp I   &kp O   &kp P          &trans
+&trans  &lt DIR A     &lt NUM S  &lt WRP D  &lt CHK F    &kp G           &kp H    &kp J        &kp K   &kp L   &semi_swap     &trans
+&trans  &mt LCTRL Z   &kp X      &kp C      &mt LSHFT V  &kp COMMA       &kp DOT  &mt RSHFT M  &kp N   &kp B   &mt LCTRL SQT  &trans
+                                 &trans     &kp LALT     &kp RALT        &kp SPC  &trans       &trans
+      >;
+    };
 
-         bindings = < 
+    dir_layer {
+//    -------------------------------                  ------------------------------
+//    |      |     |     |     |     |                 |     |    |     |     |     |
+//    |      | PAG |     | FUN |     |                 | LFT | UP | DWN | RHT | EQL |
+//    |      |     |     |     |     |------     ------|     |    |     |     |     |
+//    -------------------|     |     |     |     |     |     |    |------------------
+//                       -------------------     ------------------
 
+      bindings = < 
 &trans  &trans  &trans   &trans  &trans   &trans        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR  &trans
 &trans  &trans  &mo PAG  &trans  &mo FUN  &trans        &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &kp EQUAL   &trans
 &trans  &trans  &trans   &trans  &trans   &trans        &trans        &trans        &trans        &trans        &trans      &trans
                          &trans  &trans   &trans        &trans        &trans        &trans 
+      >;
+    };
 
-         >;
-       };
-       
        number_layer {
 //     -------------------------------                 -------------------------------
 //     |     |     |     |     |     |                 |  #  |  7  |  8  |  9  |  %  |
@@ -267,25 +256,6 @@
 &trans  &trans  &trans  &trans  &trans  &trans        &kp C_PREV  &kp C_PP      &kp C_MUTE    &kp C_NEXT  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans        &trans      &kp C_BRI_DN  &kp C_BRI_UP  &trans      &trans  &trans
                         &trans  &trans  &trans        &trans      &trans        &trans 
-
-         >;
-       };
-       
-       keyboard_maintenance {
-       
-//     --------------------------------                   ---------------------------------
-//     | RESET |     |     |     |     |                  |      |     |    |     | RESET |
-//     |       |     |     |     |     |                  |      |     |    |     |       |
-//     | FLASH |     |     |     |     |------     -------|      |     |    |     | FLASH |
-//     --------------------|     |     |     |     |      |      |     |-------------------
-//                         -------------------     ---------------------
-
-         bindings = < 
-
-&trans  &reset       &trans  &trans  &trans  &trans        &trans    &trans    &trans   &trans   &reset       &trans
-&trans  &trans       &trans  &trans  &trans  &trans        &trans    &trans    &trans   &trans   &trans       &trans
-&trans  &bootloader  &trans  &trans  &trans  &trans        &trans    &trans    &trans   &trans   &bootloader  &trans
-                             &trans  &trans  &trans        &trans    &trans    &trans 
 
          >;
        };

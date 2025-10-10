@@ -129,5 +129,50 @@
                         &trans   &trans  &trans        &kp N0           &kp COMMA  &kp DOT
                         >;
                 };
+
+                paging_layer {
+//     --------------------------------                  ----------------------------------
+//     |      |     |     |     |     |                  |      |      |      |     |     |
+//     |      |     |     |     |     |                  | HOME | PGUP | PGDN | END |     |
+//     |      |     |     |     |     |------     -------|      |      |      |     |     |
+//     -------------------|     |     |     |     |      |      |      |-------------------
+//                        -------------------     ---------------------
+                        bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans     &trans     &trans   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &kp HOME  &kp PG_DN  &kp PG_UP  &kp END  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans     &trans     &trans   &trans  &trans
+                        &trans  &trans  &trans        &trans    &trans     &trans
+                        >;
+                };
+
+                wrapping_layer {
+//     -------------------------------                   -------------------------------
+//     |      |     |     |     |     |                  |     |  [  |  ]  |     |     |
+//     |      |     |     |     |     |                  |     |  (  |  )  |     |     |
+//     |      |     |     |     |     |------     -------|     |  {  |  }  |     |     |
+//     -------------------|     |     |     |     |      |  <  |  >  |------------------
+//                        -------------------     --------------------
+                        bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans        &trans  &kp LBKT  &kp RBKT  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans  &kp LPAR  &kp RPAR  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans  &kp LBRC  &kp RBRC  &trans  &trans  &trans
+                        &trans  &trans  &trans        &trans  &kp LT    &kp GT
+                        >;
+                };
+
+                tab_layer {
+//     --------------------------------                  ----------------------------------
+//     |      |     |     |     |     |                  |      |     |       |     |     |
+//     |      |     |     |     |     |                  | BKSP | TAB | S-TAB | DEL |     |
+//     |      |     |     |     |     |------     -------|      |     |       |     |     |
+//     -------------------|     |     |     |     |      |      |     |--------------------
+//                        -------------------     ---------------------
+                        bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans       &trans   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &kp BSPC  &kp TAB   &kp LS(TAB)  &kp DEL  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans    &trans    &trans       &trans   &trans  &trans
+                        &trans  &trans  &trans        &trans    &trans    &trans
+                        >;
+                };
         };
 };

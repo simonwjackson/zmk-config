@@ -54,7 +54,7 @@ west update
 # Build left half
 west build -p -s zmk/app -b nice_nano_v2 -- -DSHIELD=corne_left -DZMK_CONFIG="$PWD/config"
 
-# Build right half  
+# Build right half
 west build -p -s zmk/app -b nice_nano_v2 -- -DSHIELD=corne_right -DZMK_CONFIG="$PWD/config"
 ```
 
@@ -74,15 +74,17 @@ git push
 ### Making Changes
 
 1. Edit keymap in `config/corne.keymap`
-2. Modify configuration in `config/corne.conf` 
+2. Modify configuration in `config/corne.conf`
 3. Update build matrix in `build.yaml` if adding new board/shield combinations
 4. Commit and push - GitHub Actions will build firmware automatically
+
+**Important**: Any changes to `config/corne.keymap` bindings must maintain column alignment for readability. ASCII art comments above each layer must also be updated to reflect any key mapping changes.
 
 ### Keymap Structure
 
 The keymap uses ZMK's devicetree syntax with 3 layers:
 - Layer 0 (default): QWERTY layout
-- Layer 1 (lower): Numbers, Bluetooth controls, arrows  
+- Layer 1 (lower): Numbers, Bluetooth controls, arrows
 - Layer 2 (raise): Symbols and special characters
 
 Layer switching uses momentary layer-toggle behavior (`&mo`) on thumb keys.

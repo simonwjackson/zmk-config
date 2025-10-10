@@ -44,6 +44,28 @@
                 };
         };
 
+        combos {
+                compatible = "zmk,combos";
+
+                combo_esc {
+                        timeout-ms = <80>;
+                        key-positions = <20 21>;
+                        bindings = <&kp ESC>;
+                };
+
+                combo_ret {
+                        timeout-ms = <80>;
+                        key-positions = <19 20>;
+                        bindings = <&kp RET>;
+                };
+
+                combo_sav {
+                        timeout-ms = <50>;
+                        key-positions = <18 21>;
+                        bindings = <&kp LC(S)>;
+                };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 

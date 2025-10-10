@@ -83,5 +83,51 @@
                                  &tog AND   &kp RALT     &kp RGUI      &mt RALT SPC  &trans       &trans
                         >;
                 };
+
+                android_compat_layer {
+//    Moonlight will remap Right-Alt to Gui for better compatibility within android.
+//    --------------------------------                  -------------------------------
+//    |  Q  |  W  |  E  |  R  |  T   |                  |  Y  |  U  |  I  |  O  |  P  |
+//    |  A  |  S  |  D  |  F  |  G   |                  |  H  |  J  |  K  |  L  | :/; |
+//    |  Z  |  X  |  C  |  V  |  ,   |-------     ------|  .  |  M  |  N  |  B  |  '  |
+//    ------------------|     | LALT | RALT |     | SPC |     |     |------------------
+//                       ---------------------     -------------------
+                        bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &kp RALT      &trans  &trans  &trans
+                        >;
+                };
+
+                dir_layer {
+//    -------------------------------                  ------------------------------
+//    |      |     |     |     |     |                 |     |    |     |     |     |
+//    |      | PAG |     | FUN |     |                 | LFT | UP | DWN | RHT | EQL |
+//    |      |     |     |     |     |------     ------|     |    |     |     |     |
+//    -------------------|     |     |     |     |     |     |    |------------------
+//                       -------------------     ------------------
+                        bindings = <
+&trans  &trans  &trans   &trans  &trans   &trans        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR  &trans
+&trans  &trans  &mo PAG  &trans  &mo FUN  &trans        &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &kp EQUAL   &trans
+&trans  &trans  &trans   &trans  &trans   &trans        &trans        &trans        &trans        &trans        &trans      &trans
+                         &trans  &trans   &trans        &trans        &trans        &trans
+                        >;
+                };
+
+                number_layer {
+//     -------------------------------                 -------------------------------
+//     |     |     |     |     |     |                 |  #  |  7  |  8  |  9  |  %  |
+//     |     |     | SYM |     |     |                 |  +  |  4  |  5  |  6  |  -  |
+//     |     |     |     |     |     |------     ------|  *  |  1  |  2  |  3  |  /  |
+//     ------------------|     |     |     |     |  0  |  ,  |  .  |------------------
+//                       -------------------     -------------------
+                        bindings = <
+&trans  &trans  &trans  &trans   &trans  &trans        &kp HASH         &kp N7     &kp N8  &kp N9  &kp PRCNT  &trans
+&trans  &trans  &trans  &mo SYM  &trans  &trans        &kp KP_PLUS      &kp N4     &kp N5  &kp N6  &kp MINUS  &trans
+&trans  &trans  &trans  &trans   &trans  &trans        &kp KP_MULTIPLY  &kp N1     &kp N2  &kp N3  &kp FSLH   &trans
+                        &trans   &trans  &trans        &kp N0           &kp COMMA  &kp DOT
+                        >;
+                };
         };
 };

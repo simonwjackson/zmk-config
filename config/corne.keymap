@@ -94,6 +94,27 @@
                         bindings = <&kp LC(S)>;
                         require-prior-idle-ms = <100>;
                 };
+
+                combo_tab {
+                        timeout-ms = <120>;
+                        key-positions = <1 2>;
+                        bindings = <&kp TAB>;
+                        require-prior-idle-ms = <100>;
+                };
+
+                combo_bspc {
+                        timeout-ms = <120>;
+                        key-positions = <8 9>;
+                        bindings = <&kp BSPC>;
+                        require-prior-idle-ms = <100>;
+                };
+
+                combo_del_word {
+                        timeout-ms = <120>;
+                        key-positions = <7 8>;
+                        bindings = <&kp LC(BSPC)>;
+                        require-prior-idle-ms = <100>;
+                };
         };
 
         keymap {

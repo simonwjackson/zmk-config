@@ -69,6 +69,38 @@
                         flavor = "balanced";
                         bindings = <&kp>, <&kp>;
                 };
+
+                td_esc_caps: tap_dance_esc_caps {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "TAP_DANCE_ESC_CAPS";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&kp ESC>, <&kp CAPS>;
+                };
+
+                td_paren: tap_dance_parenthesis {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "TAP_DANCE_PAREN";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&kp LPAR>, <&kp RPAR>;
+                };
+
+                td_bracket: tap_dance_bracket {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "TAP_DANCE_BRACKET";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&kp LBKT>, <&kp RBKT>;
+                };
+
+                td_brace: tap_dance_brace {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "TAP_DANCE_BRACE";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&kp LBRC>, <&kp RBRC>;
+                };
         };
 
         combos {
@@ -77,7 +109,7 @@
                 combo_esc {
                         timeout-ms = <120>;
                         key-positions = <20 21>;
-                        bindings = <&kp ESC>;
+                        bindings = <&td_esc_caps>;
                         require-prior-idle-ms = <100>;
                 };
 
@@ -182,16 +214,16 @@
 
                 wrapping_layer {
 //     -------------------------------                   -------------------------------
-//     |      |     |     |     |     |                  |     |  [  |  ]  |     |     |
-//     |      |     |     |     |     |                  |     |  (  |  )  |     |     |
-//     |      |     |     |     |     |------     -------|     |  {  |  }  |     |     |
+//     |      |     |     |     |     |                  |     | [/] |     |     |     |
+//     |      |     |     |     |     |                  |     | (/) |     |     |     |
+//     |      |     |     |     |     |------     -------|     | {/} |     |     |     |
 //     -------------------|     |     |     |     |      |  <  |  >  |------------------
 //                        -------------------     --------------------
                         bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans        &trans  &kp LBKT  &kp RBKT  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans  &kp LPAR  &kp RPAR  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans  &kp LBRC  &kp RBRC  &trans  &trans  &trans
-                        &trans  &trans  &trans        &trans  &kp LT    &kp GT
+&trans  &trans  &trans  &trans  &trans  &trans        &trans  &td_bracket  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans  &td_paren    &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans  &td_brace    &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans        &trans  &kp LT       &kp GT
                         >;
                 };
 

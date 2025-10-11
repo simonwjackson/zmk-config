@@ -101,6 +101,14 @@
                         tapping-term-ms = <200>;
                         bindings = <&kp LBRC>, <&kp RBRC>;
                 };
+
+                td_angle: tap_dance_angle {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "TAP_DANCE_ANGLE";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&kp LT>, <&kp GT>;
+                };
         };
 
         combos {
@@ -214,16 +222,16 @@
 
                 wrapping_layer {
 //     -------------------------------                   -------------------------------
-//     |      |     |     |     |     |                  |     | [/] |     |     |     |
-//     |      |     |     |     |     |                  |     | (/) |     |     |     |
-//     |      |     |     |     |     |------     -------|     | {/} |     |     |     |
-//     -------------------|     |     |     |     |      |  <  |  >  |------------------
+//     |      |     |     |     |     |                  |     |     |     |     |     |
+//     |      |     |     |     |     |                  | [/] | (/) | {/} | </> |     |
+//     |      |     |     |     |     |------     -------|     |     |     |     |     |
+//     -------------------|     |     |     |     |      |     |     |------------------
 //                        -------------------     --------------------
                         bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans        &trans  &td_bracket  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans  &td_paren    &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans  &td_brace    &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans        &trans  &kp LT       &kp GT
+&trans  &trans  &trans  &trans  &trans  &trans        &trans       &trans       &trans       &trans      &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &td_bracket  &td_paren    &td_brace    &td_angle   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans       &trans       &trans       &trans      &trans  &trans
+                        &trans  &trans  &trans        &trans       &trans       &trans
                         >;
                 };
 

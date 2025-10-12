@@ -227,6 +227,30 @@
                         bindings = <&mo>, <&kp>;
                 };
 
+                // Dedicated shift behaviors for fast typing
+                hm_shift: homerow_shift {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "HOMEROW_SHIFT";
+                        #binding-cells = <2>;
+                        tapping-term-ms = <150>;      // Faster recognition
+                        quick-tap-ms = <125>;          // Faster repeat
+                        require-prior-idle-ms = <50>;  // Much less idle required
+                        flavor = "tap-preferred";      // Prefer tap for fast typing
+                        bindings = <&kp>, <&kp>;
+                };
+
+                // Positional shift - only activates with opposite hand
+                hm_shift_pos: homerow_shift_positional {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "HOMEROW_SHIFT_POS";
+                        #binding-cells = <2>;
+                        tapping-term-ms = <150>;
+                        quick-tap-ms = <125>;
+                        flavor = "tap-unless-interrupted";  // Even more tap-focused
+                        hold-trigger-key-positions = <0 1 2 3 4 5 18 19 20 21 22 23 30 31 32 33 34 35>;  // Left half keys
+                        bindings = <&kp>, <&kp>;
+                };
+
                 // Mouse movement behaviors require newer ZMK version
                 // mmv_slow: mmv_slow {
                 //         compatible = "zmk,behavior-input-two-axis";
@@ -366,7 +390,7 @@
                         bindings = <
 &trans  &kp Q           &kp W           &lt MED E        &kp R             &kp T         &kp Y         &kp U             &kp I            &kp O           &kp P          &trans
 &trans  &lt_pinky DIR A &lt_ring NUM S  &lt_middle WRP D &lt_index CHK F   &kp G         &kp H         &kp J             &kp K            &kp L           &semi_swap     &trans
-&trans  &hm_pinky LCTRL Z &kp X         &kp C            &hm_index LSHFT V &kp COMMA     &kp DOT       &hm_index RSHFT M &kp N            &kp B           &hm_pinky LCTRL SQT  &trans
+&trans  &hm_pinky LCTRL Z &kp X         &kp C            &hm_shift LSHFT V &kp COMMA     &kp DOT       &hm_shift RSHFT M &kp N            &kp B           &hm_pinky LCTRL SQT  &trans
                                         &lt BTC ESC      &mo MOU           &hm_thumb RGUI ESC  &hm_thumb RALT SPC  &mo VIM          &trans
                         >;
                 };

@@ -514,8 +514,8 @@
 //     -------------------|     |     |     |     |      |      |       |----------------------
 //                        -------------------     -----------------------
                         bindings = <
-&trans  &trans        &trans         &mkp MCLK    &trans       &trans        &trans           &trans            &trans          &trans            &trans  &trans
-&trans  &mo MOU_SLOW  &mo MOU_FAST   &mkp LCLK    &mkp RCLK    &trans        &trans           &trans            &trans          &trans            &trans  &trans
+&trans  &trans        &trans         &trans    &trans       &trans        &trans           &trans            &trans          &trans            &trans  &trans
+&trans  &mo MOU_SLOW  &mo MOU_FAST   &trans    &trans    &trans        &trans           &trans            &trans          &trans            &trans  &trans
 &trans  &trans        &trans         &trans       &trans       &trans        &trans           &trans            &trans          &trans            &trans  &trans
                                      &trans       &trans       &trans        &trans           &trans            &trans
                         >;
@@ -529,8 +529,8 @@
 //     -------------------|     |     |     |     |      |      |       |----------------------
 //                        -------------------     -----------------------
                         bindings = <
-&trans  &trans  &trans       &mkp MCLK    &trans       &trans        &trans                &trans                 &trans               &trans                 &trans  &trans
-&trans  &trans  &trans       &mkp LCLK    &mkp RCLK    &trans        &trans                &trans                 &trans               &trans                 &trans  &trans
+&trans  &trans  &trans       &trans    &trans       &trans        &trans                &trans                 &trans               &trans                 &trans  &trans
+&trans  &trans  &trans       &trans    &trans    &trans        &trans                &trans                 &trans               &trans                 &trans  &trans
 &trans  &trans  &trans       &trans       &trans       &trans        &trans                &trans                 &trans               &trans                 &trans  &trans
                              &trans       &trans       &trans        &trans                &trans                 &trans
                         >;
@@ -544,8 +544,8 @@
 //     -------------------|     |     |     |     |      |      |       |----------------------
 //                        -------------------     -----------------------
                         bindings = <
-&trans  &trans  &trans       &mkp MCLK    &trans       &trans        &trans                &trans                 &trans               &trans                 &trans  &trans
-&trans  &trans  &trans       &mkp LCLK    &mkp RCLK    &trans        &trans                &trans                 &trans               &trans                 &trans  &trans
+&trans  &trans  &trans       &trans    &trans       &trans        &trans                &trans                 &trans               &trans                 &trans  &trans
+&trans  &trans  &trans       &trans    &trans    &trans        &trans                &trans                 &trans               &trans                 &trans  &trans
 &trans  &trans  &trans       &trans       &trans       &trans        &trans                &trans                 &trans               &trans                 &trans  &trans
                              &trans       &trans       &trans        &trans                &trans                 &trans
                         >;

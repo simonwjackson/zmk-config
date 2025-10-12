@@ -8,9 +8,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/reset.h>
-// Mouse support requires newer ZMK version
-// #include <dt-bindings/zmk/pointing.h>
-// #include <dt-bindings/zmk/inputs.h>
+// Mouse support requires newer ZMK version (now on main branch)
+#include <dt-bindings/zmk/mouse.h>
 
 #define DEF 0
 #define DIR 1
@@ -264,24 +263,6 @@
                         bindings = <&kp>, <&kp>;
                 };
 
-                // Mouse movement behaviors require newer ZMK version
-                // mmv_slow: mmv_slow {
-                //         compatible = "zmk,behavior-input-two-axis";
-                //         #binding-cells = <1>;
-                //         x-input-code = <INPUT_REL_X>;
-                //         y-input-code = <INPUT_REL_Y>;
-                //         time-to-max-speed-ms = <500>;
-                //         acceleration-exponent = <1>;
-                // };
-
-                // mmv_fast: mmv_fast {
-                //         compatible = "zmk,behavior-input-two-axis";
-                //         #binding-cells = <1>;
-                //         x-input-code = <INPUT_REL_X>;
-                //         y-input-code = <INPUT_REL_Y>;
-                //         time-to-max-speed-ms = <200>;
-                //         acceleration-exponent = <1>;
-                // };
 
                 semi_swap: grave_escape {
                         compatible = "zmk,behavior-mod-morph";
@@ -314,7 +295,7 @@
                         compatible = "zmk,behavior-tap-dance";
                         label = "TAP_DANCE_PAREN";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <300>;
                         bindings = <&kp LPAR>, <&kp RPAR>;
                 };
 
@@ -322,7 +303,7 @@
                         compatible = "zmk,behavior-tap-dance";
                         label = "TAP_DANCE_BRACKET";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <300>;
                         bindings = <&kp LBKT>, <&kp RBKT>;
                 };
 
@@ -330,7 +311,7 @@
                         compatible = "zmk,behavior-tap-dance";
                         label = "TAP_DANCE_BRACE";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <300>;
                         bindings = <&kp LBRC>, <&kp RBRC>;
                 };
 
@@ -338,7 +319,7 @@
                         compatible = "zmk,behavior-tap-dance";
                         label = "TAP_DANCE_ANGLE";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <300>;
                         bindings = <&kp LT>, <&kp GT>;
                 };
 
@@ -545,16 +526,16 @@
 
                 mouse_layer {
 //     --------------------------------                  --------------------------------------
-//     |      |     | MID |     |     |                  |      |       |       |      |      |
+//     |      | SCUP| MID | SCDN|     |                  | SCUP | SCLT  | SCRT  | SCDN |      |
 //     | SLOW | FAST|     | LFT | RHT |                  | M_L  | M_D   | M_U   | M_R  |      |
 //     |      |     |     |     |     |------     -------|      |       |       |      |      |
-//     -------------------|     |     |     |     |      |      |       |----------------------
+//     -------------------|     |     |     |     | LFT  | RHT  |  MID  |----------------------
 //                        -------------------     -----------------------
                         bindings = <
-&trans  &trans        &trans         &trans    &trans       &trans        &trans           &trans            &trans          &trans            &trans  &trans
-&trans  &mo MOU_SLOW  &mo MOU_FAST   &trans    &trans    &trans        &trans           &trans            &trans          &trans            &trans  &trans
-&trans  &trans        &trans         &trans       &trans       &trans        &trans           &trans            &trans          &trans            &trans  &trans
-                                     &trans       &trans       &trans        &trans           &trans            &trans
+&trans  &trans        &msc SCRL_UP   &mkp MCLK &msc SCRL_DOWN &trans        &msc SCRL_UP     &msc SCRL_LEFT    &msc SCRL_RIGHT &msc SCRL_DOWN    &trans  &trans
+&trans  &mo MOU_SLOW  &mo MOU_FAST   &mkp LCLK &mkp RCLK      &trans        &mmv MOVE_LEFT   &mmv MOVE_DOWN    &mmv MOVE_UP    &mmv MOVE_RIGHT   &trans  &trans
+&trans  &trans        &trans         &trans    &trans         &trans        &trans           &trans            &trans          &trans            &trans  &trans
+                                     &trans    &trans         &trans        &mkp LCLK        &mkp RCLK         &mkp MCLK
                         >;
                 };
 
@@ -566,10 +547,10 @@
 //     -------------------|     |     |     |     |      |      |       |----------------------
 //                        -------------------     -----------------------
                         bindings = <
+&trans  &trans  &mkp MCLK    &trans    &trans       &trans        &trans                &trans                 &trans               &trans                 &trans  &trans
+&trans  &trans  &trans       &mkp LCLK &mkp RCLK    &trans        &mmv MOVE_LEFT        &mmv MOVE_DOWN         &mmv MOVE_UP         &mmv MOVE_RIGHT        &trans  &trans
 &trans  &trans  &trans       &trans    &trans       &trans        &trans                &trans                 &trans               &trans                 &trans  &trans
-&trans  &trans  &trans       &trans    &trans    &trans        &trans                &trans                 &trans               &trans                 &trans  &trans
-&trans  &trans  &trans       &trans       &trans       &trans        &trans                &trans                 &trans               &trans                 &trans  &trans
-                             &trans       &trans       &trans        &trans                &trans                 &trans
+                             &trans    &trans       &trans        &mkp LCLK             &mkp RCLK              &mkp MCLK
                         >;
                 };
 
@@ -581,10 +562,10 @@
 //     -------------------|     |     |     |     |      |      |       |----------------------
 //                        -------------------     -----------------------
                         bindings = <
+&trans  &trans  &mkp MCLK    &trans    &trans       &trans        &trans                &trans                 &trans               &trans                 &trans  &trans
+&trans  &trans  &trans       &mkp LCLK &mkp RCLK    &trans        &mmv MOVE_LEFT        &mmv MOVE_DOWN         &mmv MOVE_UP         &mmv MOVE_RIGHT        &trans  &trans
 &trans  &trans  &trans       &trans    &trans       &trans        &trans                &trans                 &trans               &trans                 &trans  &trans
-&trans  &trans  &trans       &trans    &trans    &trans        &trans                &trans                 &trans               &trans                 &trans  &trans
-&trans  &trans  &trans       &trans       &trans       &trans        &trans                &trans                 &trans               &trans                 &trans  &trans
-                             &trans       &trans       &trans        &trans                &trans                 &trans
+                             &trans    &trans       &trans        &mkp LCLK             &mkp RCLK              &mkp MCLK
                         >;
                 };
 

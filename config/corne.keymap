@@ -40,68 +40,68 @@
                         #binding-cells = <0>;
                         bindings = <&kp LC(RIGHT)>;
                 };
-                
+
                 word_back: word_backward {
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings = <&kp LC(LEFT)>;
                 };
-                
+
                 // Line operation macros
                 line_start: line_start {
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings = <&kp HOME>;
                 };
-                
+
                 line_end: line_end {
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings = <&kp END>;
                 };
-                
+
                 doc_start: doc_start {
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings = <&kp LC(HOME)>;
                 };
-                
+
                 doc_end: doc_end {
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings = <&kp LC(END)>;
                 };
-                
+
                 del_line: delete_line {
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings = <&kp HOME &kp LS(END) &kp LC(X)>;
                 };
-                
+
                 copy_line: copy_line {
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings = <&kp HOME &kp LS(END) &kp LC(C) &kp RIGHT>;
                 };
-                
+
                 del_word: delete_word {
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings = <&kp LC(DEL)>;
                 };
-                
+
                 del_word_back: delete_word_back {
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings = <&kp LC(BSPC)>;
                 };
-                
+
                 sel_word: select_word {
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings = <&kp LC(LS(RIGHT))>;
                 };
-                
+
                 sel_line: select_line {
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
@@ -382,10 +382,10 @@
 //    ------------------| BTC | MOU  | RGUI |     | SPC | VIM |     |------------------
 //                      ---------------------     -------------------
                         bindings = <
-&trans  &kp Q           &kp W           &lt MED E        &kp R             &kp T         &kp Y         &kp U             &kp I            &kp O           &kp P          &trans
-&trans  &lt_pinky DIR A &lt_ring NUM S  &lt_middle WRP D &lt_index CHK F   &kp G         &kp H         &kp J             &kp K            &kp L           &semi_swap     &trans
-&trans  &hm_pinky LCTRL Z &kp X         &kp C            &hm_shift_pos_l LSHFT V &kp COMMA     &kp DOT       &hm_shift_pos_r RSHFT M &kp N            &kp B           &hm_pinky LCTRL SQT  &trans
-                                        &lt BTC ESC      &mo MOU           &hm_thumb RGUI ESC  &hm_thumb RALT SPC  &mo VIM          &trans
+&trans  &kp Q              &kp W           &lt MED E         &kp R                    &kp T         &kp Y         &kp U                    &kp I            &kp O           &kp P          &trans
+&trans  &lt_pinky DIR A    &lt_ring NUM S  &lt_middle WRP D  &lt_index CHK F          &kp G         &kp H         &kp J                    &kp K            &kp L           &semi_swap     &trans
+&trans  &hm_pinky LCTRL Z  &kp X           &kp C             &hm_shift_pos_l LSHFT V  &kp COMMA     &kp DOT       &hm_shift_pos_r RSHFT M  &kp N            &kp B           &hm_pinky LCTRL SQT  &trans
+                                           &lt BTC ESC       &mo MOU                  &hm_thumb RGUI ESC  &hm_thumb RALT SPC  &mo VIM          &trans
                         >;
                 };
 

@@ -32,11 +32,11 @@ include:
   - board: nice_nano_v2
     shield: corne_left
     cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"kea\"
-    artifact-name: corne_fuji_left
+    artifact-name: corne_kea_left
   - board: nice_nano_v2
     shield: corne_right
     cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"kea\"
-    artifact-name: corne_fuji_right
+    artifact-name: corne_kea_right
   # Settings reset (works for both)
   - board: nice_nano_v2
     shield: settings_reset

@@ -157,35 +157,10 @@
                         compatible = "zmk,behavior-hold-tap";
                         label = "HOMEROW_SHIFT";
                         #binding-cells = <2>;
-                        tapping-term-ms = <240>;      // Longer hold required to prevent accidental shifts
-                        quick-tap-ms = <175>;          // Allow rapid taps without triggering shift
-                        require-prior-idle-ms = <175>;  // Require more idle time before shift can trigger
-                        flavor = "tap-unless-interrupted";      // Strong preference for tap over hold
-                        bindings = <&kp>, <&kp>;
-                };
-
-                // Positional shift - only activates with opposite hand
-                hm_shift_pos_l: homerow_shift_positional_left {
-                        compatible = "zmk,behavior-hold-tap";
-                        label = "HOMEROW_SHIFT_POS_L";
-                        #binding-cells = <2>;
-                        tapping-term-ms = <240>;
+                        tapping-term-ms = <200>;
                         quick-tap-ms = <175>;
-                        require-prior-idle-ms = <175>;
-                        flavor = "tap-unless-interrupted";  // Even more tap-focused
-                        hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35>;  // Right half keys for left shift
-                        bindings = <&kp>, <&kp>;
-                };
-
-                hm_shift_pos_r: homerow_shift_positional_right {
-                        compatible = "zmk,behavior-hold-tap";
-                        label = "HOMEROW_SHIFT_POS_R";
-                        #binding-cells = <2>;
-                        tapping-term-ms = <240>;
-                        quick-tap-ms = <175>;
-                        require-prior-idle-ms = <175>;
-                        flavor = "tap-unless-interrupted";  // Even more tap-focused
-                        hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29>;  // Left half keys for right shift
+                        require-prior-idle-ms = <125>;
+                        flavor = "balanced";
                         bindings = <&kp>, <&kp>;
                 };
 
@@ -310,7 +285,7 @@
                         bindings = <
 &trans  &kp Q              &kp W           &lt MED E         &kp R                    &kp T         &kp Y         &kp U                    &kp I            &kp O           &kp P          &trans
 &trans  &lt_pinky DIR A    &lt_ring NUM S  &lt_middle WRP D  &lt_index CHK F          &kp G         &kp H         &kp J                    &kp K            &kp L           &semi_swap     &trans
-&trans  &hm_pinky LCTRL Z  &kp X           &kp C             &hm_shift_pos_l LSHFT V  &kp COMMA     &kp DOT       &hm_shift_pos_r RSHFT M  &kp N            &kp B           &hm_pinky LCTRL SQT  &trans
+&trans  &hm_pinky LCTRL Z  &kp X           &kp C             &hm_shift LSHFT V  &kp COMMA     &kp DOT       &hm_shift RSHFT M  &kp N            &kp B           &hm_pinky LCTRL SQT  &trans
                                            &lt BTC ESC       &mo MOU                  &hm_thumb RGUI ESC  &hm_thumb RALT SPC  &trans           &kp CAPS
                         >;
                 };

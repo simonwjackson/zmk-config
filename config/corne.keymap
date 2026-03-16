@@ -24,7 +24,7 @@
 #define MOU 10
 #define MOU_SLOW 11
 #define MOU_FAST 12
-#define VIM 13
+
 
 &mt {
         tapping-term-ms = <450>;
@@ -33,81 +33,7 @@
 };
 
 / {
-        macros {
-                // Word navigation macros
-                word_fwd: word_forward {
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        bindings = <&kp LC(RIGHT)>;
-                };
 
-                word_back: word_backward {
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        bindings = <&kp LC(LEFT)>;
-                };
-
-                // Line operation macros
-                line_start: line_start {
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        bindings = <&kp HOME>;
-                };
-
-                line_end: line_end {
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        bindings = <&kp END>;
-                };
-
-                doc_start: doc_start {
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        bindings = <&kp LC(HOME)>;
-                };
-
-                doc_end: doc_end {
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        bindings = <&kp LC(END)>;
-                };
-
-                del_line: delete_line {
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        bindings = <&kp HOME &kp LS(END) &kp LC(X)>;
-                };
-
-                copy_line: copy_line {
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        bindings = <&kp HOME &kp LS(END) &kp LC(C) &kp RIGHT>;
-                };
-
-                del_word: delete_word {
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        bindings = <&kp LC(DEL)>;
-                };
-
-                del_word_back: delete_word_back {
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        bindings = <&kp LC(BSPC)>;
-                };
-
-                sel_word: select_word {
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        bindings = <&kp LC(LS(RIGHT))>;
-                };
-
-                sel_line: select_line {
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        bindings = <&kp HOME &kp LS(END)>;
-                };
-        };
 
         behaviors {
                 // Per-finger optimized hold-tap behaviors
@@ -385,7 +311,7 @@
 &trans  &kp Q              &kp W           &lt MED E         &kp R                    &kp T         &kp Y         &kp U                    &kp I            &kp O           &kp P          &trans
 &trans  &lt_pinky DIR A    &lt_ring NUM S  &lt_middle WRP D  &lt_index CHK F          &kp G         &kp H         &kp J                    &kp K            &kp L           &semi_swap     &trans
 &trans  &hm_pinky LCTRL Z  &kp X           &kp C             &hm_shift_pos_l LSHFT V  &kp COMMA     &kp DOT       &hm_shift_pos_r RSHFT M  &kp N            &kp B           &hm_pinky LCTRL SQT  &trans
-                                           &lt BTC ESC       &mo MOU                  &hm_thumb RGUI ESC  &hm_thumb RALT SPC  &mo VIM          &trans
+                                           &lt BTC ESC       &mo MOU                  &hm_thumb RGUI ESC  &hm_thumb RALT SPC  &trans           &kp CAPS
                         >;
                 };
 
@@ -569,19 +495,6 @@
                         >;
                 };
 
-                vim_layer {
-//     --------------------------------                  --------------------------------------
-//     |  gg  |     | END |     |     |                  |  Y  | UNDO | REDO |     | PASTE|
-//     |  0   |  h  |  j  |  k  |  l  |                  |  H  |  J   |  K   |  L  |  $   |
-//     |      | DEL | CUT | CPY | PST |------     -------|  b  |  w   |  e   | d.l | d.w  |
-//     -------------------|     |     |     |     | s.ln | s.wd |      |----------------------
-//                        -------------------     -----------------------
-                        bindings = <
-&trans  &doc_start    &trans      &line_end   &trans       &trans        &kp LC(Y)     &kp LC(Z)     &kp LC(LS(Z))  &trans         &kp LC(V)      &trans
-&trans  &line_start   &kp LEFT    &kp DOWN    &kp UP       &kp RIGHT     &kp PG_UP     &kp PG_DN     &trans         &trans         &line_end      &trans
-&trans  &trans        &kp LC(X)   &kp LC(C)   &kp LC(V)    &trans        &word_back    &word_fwd     &word_fwd      &del_line      &del_word      &trans
-                                  &trans      &trans       &trans        &sel_line     &sel_word     &trans
-                        >;
-                };
+
         };
 };
